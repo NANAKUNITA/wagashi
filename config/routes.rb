@@ -8,10 +8,14 @@ devise_for :users, skip:[:passwords], controllers:{
     sessions: "admin/sessions"
   }
   
-  #管理者用
-  devise_for :admins
 #会員用
-  devise_for :users
-  get 'homes/top'
-    root to: "homes#top"
+    scope module: :user do
+    root 'homes#top'
+    resources :users, only: [:index, :show]
+    resources :posts, only: [:show, :create, :new, :update, :edit] #indexは、 root 'homes#top'のため、ここでは指定しない
+    patch '/users/withdraw' => 'users#withdraw'
+    get '/users/confirm_withdraw' => 'users#confirm'
+    resources :users, only:[:show, :edit, :update]
+    resources :sweets, only:[:index, :show]
+end
 end

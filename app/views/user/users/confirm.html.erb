@@ -1,0 +1,27 @@
+<!--ここのレイアウトは、スプリッドにしないほうがいいかも-->
+<div class="container my-5">
+    <div class="row 1">
+        <div class="title">
+            <h1>退会手続き</h1><br>
+            <h2><strong>退会確認</strong></h2><br>
+            <p>下記の注意事項をお読みいただき、ご同意の上「退会する」ボタンを押すと、<br>
+               退会となります。</p>
+        </div>
+    </div><br>
+    <div class="row 2">
+        <div class="subtitle">
+            <p>・今までの投稿、お気に入りなどが全て削除されます。<br>
+               ・会員情報がすべて削除されます。</p>
+            <p><strong>上記注意事項にご同意の上、本当に退会されますか？</strong></p> 
+        </div>
+    </div>
+    
+        <div class="row 3">
+        <div class="offset-3 col-2">
+            <%= link_to "戻る", user_path(current_user), class: "btn btn-outline-danger" %>
+        </div>
+        <div class="offset-2 col-2">
+            <%= link_to "退会する", users_withdraw_path(@user), method: :patch, data: {confirm: "本当に退会してもよろしいですか？"}, class: "btn btn-danger" %>
+        </div>
+    </div>
+</div>

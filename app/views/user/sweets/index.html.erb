@@ -2,21 +2,23 @@
     <div class="split-item split-left">
         <div class="split-left__inner">
             <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
+                <%= render 'sweet', sweets: @sweets %>
+                <!--div class="row 1"<!-- ここの部分もeach文の中に入れたほうがいいかも？ --
                     <h2>1月</h2>
                 </div>
                 <div class="row 2">
-                    <% @sweets.each do |sweet| %>
+                    <#% @sweets.each do |sweet| %>
                     <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= imgae_tag sweet.get_image %>
-                        <% end %>
+                        <#%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
+                        <!--%= imgae_tag sweet.get_image %>
+                        <#% end %>
                         <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
+                        <#%= link_to sweet.name, sweet_path(sweet) %>
                     </div>
-                    <% end %>
+                    <#% end %>
                 </div><br>
             </div>
+            
         </div><!--split-left__inner-->
     </div><!--split-item split-left-->
     

@@ -1,0 +1,25 @@
+<div class="split">
+    <div class="split-item split-left">
+        <div class="split-left__inner">
+            <div class="container my-5">
+                <div class="row 1">
+                   <h2>マイページ</h2>
+                </div>
+                <div class="profile-container">
+                   <h3 class="profile-name"><%= @user.name %></h3>
+                   <%= image_tag @user.get_profile_image(200,200)%>
+                   <% if @user.id == current_user.id %>
+                   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+                   <% end %>
+                </div>
+            </div>
+            
+        </div><!--split-left__inner-->
+    </div><!--split-item split-left-->
+    
+    <div class="split-item split-right">
+        <div class="split-right__inner">
+            right
+        </div><!--split-right__inner-->
+    </div><!--split-item split-right-->
+</div><!--split-->

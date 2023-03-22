@@ -14,9 +14,9 @@ class User::PostsController < ApplicationController
    end
   end
 
-  def index
-    @posts=Post.page(params[:page])
-  end
+ # def index
+    #@posts=Post.page(params[:page])
+  #end
 
   def show
     @post=Post.find(params[:id])

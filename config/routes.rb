@@ -13,6 +13,8 @@ devise_for :users, skip:[:passwords], controllers:{
     root 'homes#top'
     resources :users, only: [:index, :show]
     resources :posts, only: [:show, :create, :new, :update, :edit, :destroy] #indexは、 root 'homes#top'のため、ここでは指定しない
+    resource :favorites, only: [:create, :destroy]#resourceは、単数形にすると、/:idがURLに含まれなくなる。
+    resources :comments, only: [:create, :destroy]
     patch '/users/withdraw' => 'users#withdraw'
     get '/users/confirm_withdraw' => 'users#confirm'
     resources :users, only:[:show, :edit, :update]

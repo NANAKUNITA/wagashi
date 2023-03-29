@@ -1,0 +1,39 @@
+<div class="container my-5"> <!-- text-centerとは、Bootstrapを使って中央寄せをする指定する方法。詳しくは、https://qiita.com/Rock22/items/e4e89f15c29e1415977dを参照。-->
+    <div class="row">
+        <h2>会員一覧</h2>
+    </div>
+        
+        <div class="row mt-3">
+            <div class="offset-sm-1 col-sm-10">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>会員ID</th>
+                        <th>ユーザーネーム</th>
+                        <th>メールアドレス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <% @users.each do |user| %>
+                    <tr>
+                      <td><%= user.id %></td>
+                      <td><%= link_to admin_user_path(user) do %>
+                          <%= user.name %>
+                          <% end %>
+                      </td>
+                      <!-- ↑氏名をクリックしたら、admin/userのshowへ遷移するため、link_toの後のパスは、showのパスを指定する。 -->
+                      <td><%= user.email %></td>
+                    </tr>
+                   <% end %>
+                </tbody>
+            </table>
+           </div>
+       </div>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-4 offset-md-4 py-2 mt-5">
+                   <%= paginate @users %>
+               </div>
+           </div>
+       </div>
+</div>

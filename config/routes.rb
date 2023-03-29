@@ -20,4 +20,10 @@ devise_for :users, skip:[:passwords], controllers:{
     resources :users, only:[:show, :edit, :update]
     resources :sweets, only:[:index, :show]
 end
+  #管理者側
+  namespace :admin do
+     root 'homes#top'
+     resources :posts, only: [:show, :destroy] #indexは、 root 'homes#top'のため、ここでは指定しない
+     resources :users
+end
 end

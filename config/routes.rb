@@ -12,8 +12,9 @@ devise_for :users, skip:[:passwords], controllers:{
     scope module: :user do
     root 'homes#top'
     resources :users, only: [:index, :show]
+    get '/post/hashtag/:name', to: "posts#hashtag"
     resources :posts, only: [:show, :create, :new, :update, :edit, :destroy] do #indexは、 root 'homes#top'のため、ここでは指定しない
-       resources :comments, only: [:create, :destroy] 
+    resources :comments, only: [:create, :destroy] 
      end
     resource :favorites, only: [:create, :destroy]#resourceは、単数形にすると、/:idがURLに含まれなくなる。
     resources :comments, only: [:create, :destroy]

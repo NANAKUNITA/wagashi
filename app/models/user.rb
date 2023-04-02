@@ -7,6 +7,7 @@ class User < ApplicationRecord
          has_many :posts, dependent: :destroy
          has_many :comments
          has_many :favorites
+         #has_many :favorite_posts, through: :favorites, source: :post 
 
           has_one_attached :profile_image
           

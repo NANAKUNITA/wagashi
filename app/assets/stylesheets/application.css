@@ -13,3 +13,99 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%; /* 横幅90% */
+  height: 120px; /* 高さ120px */
+  padding: 15px 0;
+  margin: 0 auto;
+  background-color: #ffa3a3;
+}
+
+
+footer{
+ border-top: 1px solid #545b64;
+    line-height: 14px;
+  background-color: #ffa3a3;
+}
+body{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1;
+}
+
+.header_logo{
+  width: 30%;
+  display: block;
+}
+
+.main {
+  width: 840px; /* 横幅840px */
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 要素の横並び・中央寄せ */
+  margin: 0 auto; /* 中央寄せ（左右に余白がないとできない） */
+}
+
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+ .navbar-nav li {
+ font-size: 15px;
+ padding-top: 15px;
+}
+
+#container{
+	height: 450px;
+	width: 550px;
+	margin-top: 150px;
+	margin-bottom: 150px;
+}
+
+#wrapper {
+  width: 100%;
+  position: relative;
+  min-height: 100%;
+}
+
+
+#content{
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+
+footer{
+ border-top: 1px solid #545b64;
+    line-height: 14px;
+  background-color: #ffa3a3;
+}
+
+.recommendation-items {
+  float: left;
+  margin-right: 50px;
+}
+
+.submit{
+    border: 1px solid #999;
+    padding: 10px;
+    background: #fff9cc;
+    margin-top:10px;
+}

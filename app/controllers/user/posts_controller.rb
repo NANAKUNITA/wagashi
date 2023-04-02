@@ -20,6 +20,8 @@ class User::PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
+    @posts=@user.posts #ここは必要なのか？
+    @favorite_posts = @user.favorite_posts
     @comment=Comment.new
   end
   

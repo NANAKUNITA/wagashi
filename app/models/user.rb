@@ -5,12 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :post_images, dependent: :destroy 
          has_many :posts, dependent: :destroy
-         has_many :comments
-         has_many :favorites
-         #has_many :favorite_posts, through: :favorites, source: :post 
+         has_many :comments, dependent: :destroy
+         has_many :favorites, dependent: :destroy
+         has_many :favorite_posts, through: :favorites, source: :post 
 
           has_one_attached :profile_image
-          
+    
+
   def get_profile_image
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

@@ -5,22 +5,9 @@
   <!--%= render "user/shared/error_messages", resource: resource %-->
 <%= devise_error_messages! %>
   <div class="row">
-    <label class="col-lg-3">名前</label>
+    <label class="col-lg-3">ユーザー名</label>
     <div class="col-lg-3">
-      <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "(姓)" %>
-    </div>
-    <div class="col-lg-3">
-      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "(名)" %>
-    </div>
-  </div><br>
-  
-  <div class="row">
-    <label class="col-lg-3">フリガナ</label>
-    <div class="col-lg-3">
-      <%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "(セイ)" %>
-    </div>
-    <div class="col-lg-3">
-      <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "(メイ)" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名" %>
     </div>
   </div><br>
   

@@ -4,6 +4,10 @@ devise_for :users, skip:[:passwords], controllers:{
     registrations: "user/registrations",
     sessions: 'user/sessions'
   }
+  # 以下を追加
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
  devise_for :admin, skip:[:registrations, :passwords], controllers:{
     sessions: "admin/sessions"
   }
@@ -11,13 +15,13 @@ devise_for :users, skip:[:passwords], controllers:{
 #会員用
     scope module: :user do
     root 'homes#top'
-    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+    # 以下を追加
     resources :users, only: [:show, :edit, :update] do
         # マイページのルーティングにネスト
          get :favorites, on: :collection
     end
     get '/post/hashtag/:name', to: "posts#hashtag"
-    resources :posts, only: [:show, :create, :new, :update, :edit, :destroy] do #indexは、 root 'homes#top'のため、ここでは指定しない
+    resources :posts, only: [:show, :index, :create, :new, :update, :edit, :destroy] do #indexは、 root 'homes#top'のため、ここでは指定しない
       resources :comments, only: [:create, :destroy] 
       resource :favorites, only: [:create, :destroy]
       #resourceは、単数形にすると、/:idがURLに含まれなくなる。

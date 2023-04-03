@@ -10,7 +10,14 @@ class User < ApplicationRecord
          has_many :favorite_posts, through: :favorites, source: :post 
 
           has_one_attached :profile_image
-    
+  def self.guest
+   find_or_create_by!(email: 'aaa@aaa.com') do |user|
+     user.password = SecureRandom.urlsafe_base64
+     user.password_confirmation = user.password
+     user.nickname = 'サンプル'
+     user.birthday = '2000-01-01'
+   end
+  end
 
   def get_profile_image
     unless profile_image.attached?

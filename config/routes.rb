@@ -11,6 +11,7 @@ devise_for :users, skip:[:passwords], controllers:{
 #会員用
     scope module: :user do
     root 'homes#top'
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
     resources :users, only: [:show, :edit, :update] do
         # マイページのルーティングにネスト
          get :favorites, on: :collection

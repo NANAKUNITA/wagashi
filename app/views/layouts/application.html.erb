@@ -9,8 +9,8 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
@@ -26,22 +26,23 @@
                   <span class="u h7 text-white strong">
                     ようこそ、<%= current_user.name %>さん！
                   </span>
-                  <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></i>
-                  <li class="nav-list-item"><%= link_to "投稿一覧", root_path, style: "font-family: HiraMinPro-W6; color: #000000;"%></i>
-                  <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user), style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
+                  <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></i>
+                  <li class="nav-list-item"><%= link_to "投稿一覧", root_path %></i>
+                  <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user) %></li>
+                  <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
                 <!-- 管理者でログインしている時 -->
                 <% elsif admin_signed_in?%>
-                  <li class="nav-list-item"><%= link_to "投稿一覧", admin_root_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li class="nav-list-item"><%= link_to "ユーザー一覧", admin_users_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li class="nav-list-item"><%= link_to "季節ごとの和菓子一覧", admin_sweets_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
+                  <li class="nav-list-item"><%= link_to "投稿一覧", admin_root_path %></li>
+                  <li class="nav-list-item"><%= link_to "ユーザー一覧", admin_users_path %></li>
+                  <li class="nav-list-item"><%= link_to "季節ごとの和菓子一覧", admin_sweets_path %></li>
+                  <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
                 <!-- ログインしていない時 -->
                 <% else %>
-                  <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li class="nav-list-item"><%= link_to "投稿一覧", root_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
+                  <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></li>
+                  <li class="nav-list-item"><%= link_to "投稿一覧", root_path %></li>
+                  <li class="nav-list-item"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %></li>
+                  <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
+                  <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
                 <% end %>
               </ul>
              </div>

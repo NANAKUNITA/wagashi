@@ -6,8 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/5c442e0d91.js" crossorigin="anonymous"></script>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
@@ -24,29 +27,20 @@
                     ようこそ、<%= current_user.name %>さん！
                   </span>
                   <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></i>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "投稿一覧", root_path, style: "font-family: HiraMinPro-W6; color: #000000;"%></i>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user), style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
                 <!-- 管理者でログインしている時 -->
                 <% elsif admin_signed_in?%>
                   <li class="nav-list-item"><%= link_to "投稿一覧", admin_root_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "ユーザー一覧", admin_users_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "季節ごとの和菓子一覧", admin_sweets_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
                 <!-- ログインしていない時 -->
                 <% else %>
                   <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "投稿一覧", root_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
-                  <li style="font-family: Osaka; margin-top: 15px; color: #696969;"></li>
                   <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path, style: "font-family: HiraMinPro-W6; color: #000000;" %></li>
                 <% end %>
               </ul>
@@ -63,7 +57,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-5 col-xs-offset-9">
-            <p>CopyRight nagano-cake.inc shop-logo made by <a href="https://www.designevo.com/jp/" title="無料オンラインロゴメーカー">DesignEvo</a></p>
+            <p>©Wagashi.inc logo made by <a href="https://www.designevo.com/jp/" title="無料オンラインロゴメーカー">DesignEvo</a></p>
           </div>
         </div>
       </div>

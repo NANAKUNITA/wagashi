@@ -7,7 +7,7 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
+ * files in this directory. Styles in this file should be icon after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
@@ -46,10 +46,43 @@ a{
 }
 
 .header_logo{
-  width: 35%;
+  width: 170px;
   display: block;
 }
+div.icon{
+    float:right;
+    padding:10px;                
+}
+div.icon ul{
+    margin:0;
+    padding:0;
+    font-size:14px;
+    line-height:1.4;
+    list-style:none;
+    *zoom:1;
+}
+div.icon ul:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+div.icon li{
+    float:left;
+}
+div.icon li a{
+    display:block;
+    padding:10px;
+    color:#000;
+    text-decoration:none;
+}
+div.icon li a span{
+    display:inline-block;
+    text-indent:-9999px;
+}
 
+div.icon li a i{
+    font-size:40px;
+}
 .navbar ul{
   display: flex;
 }
@@ -110,8 +143,8 @@ a{
 footer{
   color: #ffffff;
   background-color: #24211b;
-  padding-top: 30px;
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;

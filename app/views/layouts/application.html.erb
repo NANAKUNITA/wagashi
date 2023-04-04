@@ -15,11 +15,19 @@
   </head>
   
   <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
+    <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="icon">
+             <ul>
+                <li><a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a></li>
+                <li><a href="#"><i class="fa fa-twitter-square"></i><span>Twitter</span></a></li>
+                <li><a href="#"><i class="fa fa-facebook-square"></i><span>FaceBook</span></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></i><span>Pinterest</span></a></li>
+              </ul>
+          </div>
         <div class="container mb-6">
           <a class="navbar-brand p-3" href="/"><%= link_to root_path, class: "header_logo" do %> <%= image_tag('wagashi01.jpg', class: 'header_logo') %><% end %></a>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <nav class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <!-- 会員でログインしている時 -->
                 <% if user_signed_in? %>
@@ -39,8 +47,8 @@
                 <!-- ログインしていない時 -->
                 <% else %>
                   <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></li>
-                  <li class="nav-list-item"><%= link_to "投稿一覧", root_path %></li>
-                  <li class="nav-list-item"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "login" %></li>
+                  <li class="nav-list-item"><%= link_to "投稿一覧", posts_path %></li>
+                  <li class="nav-list-item"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></li>
                   <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
                   <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
                 <% end %>
@@ -51,7 +59,7 @@
         </header>
 	
         <main class="mb-auto">
-          <div class="bg_pattern Wavy">
+          <div class="bg_pattern Wavy"><!-- ウェーブはこの位置でいいのか？-->
             </div>
           <%= yield %>
         </main>

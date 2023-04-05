@@ -1,59 +1,40 @@
 class User::PostsController < ApplicationController
     #pathの確認
+ #before_action :authenticate_user!
+
   def new
-    @post=Post.new
+    @post = Post.new
+    @post.images.build
   end
 
   def create
-    @post=Post.new(post_params)
-    @post.user_id=current_user.id
-   if @post.save
-    redirect_to posts_path(@post), notice:'投稿完了しました:)'
-   else
-     render :new 
-   end
+    @post = Post.new(post_params)
+    if @post.images.present? #photsをimagesに？
+      @post.save
+      redirect_to root_path
+      flash[:notice] = "投稿が保存されました"
+    else
+      redirect_to root_path
+      flash[:alert] = "投稿に失敗しました"
+    end
   end
 
-  def top
-    @posts=Post.page(params[:page]).per(10)
+  def index
+    @posts = Post.limit(10).order('created_at DESC')
   end
 
+  # ==========ここから追加する==========
   def show
-    @post=Post.find(params[:id])
-    @posts=@user.posts #ここは必要なのか？
-    @favorite_posts = @user.favorite_posts
-    @comment=Comment.new
+    @post = Post.find_by(id: params[:id])
   end
-  
-  def edit
-      @post=Post.find(params[:id])
-  end
-  
-  def update
-      @post=Post.find(params[:id])
-      if @post.update(post_params)
-         redirect_to post_path(@post.id), notice: "投稿完了しました。"
-      else
-          flash.now[:danger] = "編集に失敗しました"
-          render 'edit'
-      end
-  end
-  
+  # ==========ここまで追加する==========
   def hashtag
   @tag = Tag.find(params[:tag_id])
   @posts = @tag.posts
   end
-
-  def destroy
-    @post=Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
-  end
-
+  
   private
-
-  def post_params
-    params.require(:post).permit(:name, :image, :content)
-  end
-
+    def post_params
+      params.require(:post).permit(:content, photos_attributes: [:image]).merge(user_id: current_user.id)
+    end
 end

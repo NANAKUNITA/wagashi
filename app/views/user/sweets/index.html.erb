@@ -1,30 +1,17 @@
-<div class="split">
-    <div class="split-item split-left">
-        <div class="split-left__inner">
-            <div class="container my-5">
-                <%= render 'sweet', sweets: @sweets %>
-                <!--div class="row 1"<!-- ここの部分もeach文の中に入れたほうがいいかも？ --
-                    <h2>1月</h2>
-                </div>
-                <div class="row 2">
-                    <#% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <#%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <!--%= imgae_tag sweet.get_image %>
-                        <#% end %>
-                        <br>
-                        <#%= link_to sweet.name, sweet_path(sweet) %>
+<div class="container my-5">
+    <%= render 'sweet', sweets: @sweets %>
+        <!--div class="row 1"<!-- ここの部分もeach文の中に入れたほうがいいかも？ --
+            <h2>1月</h2>
+        /div>
+        <div class="row 2">
+            <#% @sweets.each do |sweet| %>
+                <div class="col-md-4">
+                   <#%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
+                     <!--%= imgae_tag sweet.get_image %>
+                   <#% end %>
+                    <br>
+                    <#%= link_to sweet.name, sweet_path(sweet) %>
                     </div>
-                    <#% end %>
-                </div><br>
-            </div>
-            
-        </div><!--split-left__inner-->
-    </div><!--split-item split-left-->
-    
-    <div class="split-item split-right">
-        <div class="split-right__inner">
-            right
-        </div><!--split-right__inner-->
-    </div><!--split-item split-right-->
-</div><!--split-->
+            <#% end %>
+        </div><br>
+</div>

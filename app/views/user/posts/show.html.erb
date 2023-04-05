@@ -1,41 +1,38 @@
-<!-- pathの確認-->
-<div>
-  <%= image_tag @post.get_image %>
-  <h2><%= @user.name %>さんの投稿</h2>
-  <p>タイトル:<%= @post.title %></p>
-  <p>説明:<%= @post.content %></p>
-  <p>投稿ユーザー画像:<%= image_tag @post.user.get_profile_image(100,100) %></p>
-  <p>ユーザーネーム:<%= @post.user.name %></p>
-  <p>投稿日:<%= @post.created_at.strftime('%Y/%m/%d')%></p>
-  <% if @post.user == current_user %>
-   <%= link_to "削除",post_path(@post), method: :delete %>
-  <% end %>
-<!--　お気に入り機能-->
-   <% if @post.already_favorited?(current_user) %>
-  <p class="favorite-heading">保存をキャンセル</p>
-   <%= link_to favorites_path(@post), method: :delete, class: "favorite-link" do %>
-    <i class="fa-regular fa-star"></i>
-    <% else %>
-  <p class="favorite-heading">投稿を保存</p>
-   <%= link_to favorites_path(@post), method: :post, class: "favorite-link" do %>
-    <i class="fa-solid fa-star"></i>
-<!-- お気に入り機能はここまで-->
-</div>
 
-<div>
-  <p>コメント件数：<%= @post.comments.count %></p>
-  <% @post.comments.each do |comment| %>
-    <p><%= image_tag comment.user.get_profile_image(100,100) %></p>
-    <%= comment.user.name %>
-    <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
-    <% if comment.user == current_user %>
-     <%= link_to "削除", post_comment_path(comment.post, comment), method: :delete %>
-    <% end %>
-  <% end %>
-</div>
-<div>
-  <%= form_with model: [@post, @comment] do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
-  <% end %>
+<div class="col-md-10 col-md-offset-1 mx-auto postShow-wrap">
+  <div class="row post-wrap">
+    <div class="col-md-8">
+      <div class="card-left">
+        <%= image_tag @post.get_image, class: "card-img-top" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-right">
+        <div class="card-right-comment">
+          <div class="card-right-name">
+            <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
+              <%= image_tag avatar_url(@post.user), class: "post-profile-icon" %>
+            <% end %>
+            <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-user-name",
+              title: @post.user.name do %>
+              <strong><%= @post.user.name %></strong>
+            <% end %>
+          </div>
+          <div class="m-2">
+            <strong>
+              <%= @post.content %>
+            </strong>
+          </div>
+          <div class="comment-post-id">
+            <div class="m-2">
+            </div>
+          </div>
+        </div>
+        <div class="row parts">
+        </div>
+        <div class="post-time"><%= time_ago_in_words(@post.created_at).upcase %>前</div>
+        <hr>
+      </div>
+    </div>
+  </div>
 </div>

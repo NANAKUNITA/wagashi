@@ -1,40 +1,27 @@
-<div class="split">
-    <div class="split-item split-left">
-        <div class="split-left__inner">
-            <div class="container my-5">
-                <div class="row 1">
-                   <h2>マイページ</h2>
-                </div>
-                <div class="profile-row"><!-- containerかrow -->
-                   <td>ユーザーネーム</td>
-                   <td><%= @user.name %></td>
-                   <%= image_tag @user.get_profile_image(300,300)%>
-                   <!--% if @user.id == current_user.id %>
-                   <p><#%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-                   <#% end %-->
-                </div><br><br>
+<div class="container my-5">
+    <div class="row 1">
+        <h2>マイページ</h2>
+    </div>
+    <div class="profile-row"><!-- containerかrow -->
+        <td>ユーザーネーム</td>
+        <td><%= @user.name %></td>
+            <%= image_tag @user.get_profile_image(300,300)%>
+            <!--% if @user.id == current_user.id %>
+            <p><#%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+            <#% end %-->
+    </div><br><br>
                 
-                <div class="row 2">
-                    <td>メールアドレス</td><!-- tdは必要か？ -->
-                    <td><%= @user.email %></td>
-                </div><br><br>
+    <div class="row 2">
+        <td>メールアドレス</td><!-- tdは必要か？ -->
+        <td><%= @user.email %></td>
+    </div><br><br>
                 
-                <div class="row 3">
-                    <% if @user.id == current_user.id %>
-                    <p><%= link_to "プロフィールを編集", edit_user_path(@user) %></p>
-                    <% end %>
-                </div>
+    <div class="row 3">
+        <% if @user.id == current_user.id %>
+        <p><%= link_to "プロフィールを編集", edit_user_path(@user) %></p>
+        <% end %>
+    </div>
                 
-                <!--div class="row 4">
-                    ブックマーク一覧
-                </div-->
-            </div>
-        </div><!--split-left__inner-->
-    </div><!--split-item split-left-->
-    
-    <div class="split-item split-right">
-        <div class="split-right__inner">
-            right
-        </div><!--split-right__inner-->
-    </div><!--split-item split-right-->
-</div><!--split-->
+    <!--div class="row 4"
+        ブックマーク一覧-->
+</div>

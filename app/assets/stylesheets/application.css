@@ -166,17 +166,17 @@ footer{
   bottom: 0;
 }
 
-/* ウェーブのレイアウト */
+/* ウェーブのレイアウト 
 .bg_pattern {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #ffe9a7;
+  background-color: #ffffff;
   opacity: 0.4;
   z-index: -1;
 }
 .Wavy {
   background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #FFF8DC 20px ), repeating-linear-gradient( #ffc10755, #ffc107 );
-}
+}*/

@@ -1,192 +1,31 @@
             <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>1月</h2>
+                <div class="row"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
+                    <h2 class="month">1月</h2><br>
                 </div>
-                <div class="row 2">
+                <div class="row">
+                                        <div class="col-md-3">
                     <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
                         <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
                         <%= image_tag sweet.get_image %>
                         <% end %>
-                        <br>
+                        <br><br>
                         <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
                     <% end %>
-                </div><br>
+                                        </div>
             </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>2月</h2>
+                <div class="row"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
+                    <h2 class="month">1月</h2><br>
                 </div>
-                <div class="row 2">
+                <div class="row">
+                                        <div class="col-md-3">
                     <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
                         <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
                         <%= image_tag sweet.get_image %>
                         <% end %>
-                        <br>
+                        <br><br>
                         <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
                     <% end %>
-                </div><br>
+                                        </div>
             </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>3月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
             </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>4月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>5月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>6月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>7月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>8月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>9月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>10月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>11月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
-            <div class="container my-5">
-                <div class="row 1"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2>12月</h2>
-                </div>
-                <div class="row 2">
-                    <% @sweets.each do |sweet| %>
-                    <div class="col-md-4">
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-                    <% end %>
-                </div><br>
-            </div>
+

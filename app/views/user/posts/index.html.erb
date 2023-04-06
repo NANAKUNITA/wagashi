@@ -3,10 +3,11 @@
         <h2 class="title"><strong>投稿一覧</strong></h2>
     </div>
     <div class="row 2">
+        <div class="contaier">
         <% @posts.each do |post| %>
         <div class="col-md-3">
             <%= link_to user_path(post.user) do %>
-              <%= image_tag post.get_image %>
+              <%= image_tag post.get_image, class: "post-img" %>
             <% end %>
             <br>
             <%= link_to(post_path(post)) do %>
@@ -21,6 +22,7 @@
             <%= post.content %>
         </div>
         <% end %>
+        </div>
     </div><br>
         <%= paginate @posts %>
 </div>

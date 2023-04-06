@@ -3,36 +3,47 @@
   margin: 0;
   padding: 0;
 }
-
-
-.post-wrap .col-md-8 {
-  padding: 0px;
-}
-
-.card-right {
-  padding: 20px;
-}
-
-.card-right-name {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
+.container{
+      max-width: 1200px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
   display: flex;
-}
-
-.card-right-comment {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
-  height: 320px;
-  overflow: auto;
-}
-
-.postShow-wrap {
-  border: 1px solid #e6e6e6;
-  margin: 40px;
-}
-
-.post-user-name {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  line-height: 0;
+}
+
+.detail{
+    float: left;
+    margin-left: 30px;
+}
+.detail span{
+    font-size: 10px;
+}
+.item-box{
+    float: left;
+}
+.item-image{
+    float: left;
+}
+.amount-select-form{
+    margin-right: 50px;
+}
+.item-price{
+    margin-bottom: 50px;
+}
+img{
+  max-width: 70%;
+  text-align: center;
+}
+.row{
+    margin: 20px;
+}
+.p{
+    margin-bottom: 0;
+}
+.pagination {
+  justify-content: center;
 }

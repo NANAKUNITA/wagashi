@@ -20,7 +20,7 @@ class User::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.limit(10).order('created_at DESC')
+    @posts = Post.limit(10).order('created_at DESC').page(params[:page]).per(2)
   end
 
   # ==========ここから追加する==========

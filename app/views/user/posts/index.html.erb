@@ -16,9 +16,10 @@
                         <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
                           「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
                       <% end %>
-                      <%= link_to user_path(post.user), title: post.user.name do %>
+                      <%= link_to user_path(post.user), title: post.user.name do %>&ensp;
                         <strong><%= post.user.name %></strong>
                       <% end %>
+                      <br>
                       <%= post.content %>
                     </dd>
                 </dl>

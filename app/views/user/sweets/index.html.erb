@@ -1,17 +1,51 @@
 <div class="container my-5">
-    <%= render 'sweet', sweets: @sweets %>
-        <!--div class="row 1"<!-- ここの部分もeach文の中に入れたほうがいいかも？ --
-            <h2>1月</h2>
-        /div>
-        <div class="row 2">
-            <#% @sweets.each do |sweet| %>
-                <div class="col-md-4">
-                   <#%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                     <!--%= imgae_tag sweet.get_image %>
-                   <#% end %>
-                    <br>
-                    <#%= link_to sweet.name, sweet_path(sweet) %>
-                    </div>
-            <#% end %>
-        </div><br-->
+    <div class="sweet-index">
+        <h2>1月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+        <div class="sweet-index">
+        <h2>2月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>3月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>4月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>5月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>6月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>7月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>8月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>9月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>10月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>11月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
+    <div class="sweet-index">
+        <h2>12月</h2>
+        <%= render 'sweet', sweets: @sweets %>
+    </div>
 </div>
+

@@ -1,28 +1,34 @@
 <div class="container my-5">
-    <div class="row 1">
-        <h2 class="title"><strong>投稿一覧</strong></h2>
+    <div class="post-index">
+        <h2>投稿一覧</h2>
+        <div class="post-item">
+            <% @posts.each do |post| %>
+            <div>
+                <dl>
+                    <dt>
+                      <%= link_to user_path(post.user) do %>
+                        <%= image_tag post.get_image, class: "post-img" %>
+                      <% end %>
+                    </dt>
+                    <dd>
+                      <%= link_to(post_path(post)) do %>
+                        <%= image_tag post.user.get_profile_image, class: "post-profile-img" %>
+                        <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
+                          「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
+                      <% end %>
+                      <%= link_to user_path(post.user), title: post.user.name do %>
+                        <strong><%= post.user.name %></strong>
+                      <% end %>
+                      <%= post.content %>
+                    </dd>
+                </dl>
+            </div>
+            <% end %>
+        </div>
+    <div class="pagination">
+        <div class="page">
+          <%= paginate @posts %>
+        </div>
     </div>
-    <div class="row 2">
-        <div class="contaier">
-        <% @posts.each do |post| %>
-        <div class="col-md-3">
-            <%= link_to user_path(post.user) do %>
-              <%= image_tag post.get_image, class: "post-img" %>
-            <% end %>
-            <br>
-            <%= link_to(post_path(post)) do %>
-              <%= image_tag post.user.get_profile_image %>
-              <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
-              「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
-            <% end %>
-            <br>
-            <%= link_to user_path(post.user), title: post.user.name do %>
-              <strong><%= post.user.name %></strong>
-            <% end %>
-            <%= post.content %>
-        </div>
-        <% end %>
-        </div>
-    </div><br>
-        <%= paginate @posts %>
+    </div>
 </div>

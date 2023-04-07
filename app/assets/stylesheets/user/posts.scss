@@ -3,47 +3,88 @@
   margin: 0;
   padding: 0;
 }
-.container{
-      max-width: 1200px;
-  height: 110px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+img{
+    width: 100px;
+  height: 100px;
+}
+.post-index{
+  background-color: #f8f8f8;
+  padding-top: 45px;
+  padding-bottom: 60px;
 }
 
-.detail{
-    float: left;
-    margin-left: 30px;
-}
-.detail span{
-    font-size: 10px;
-}
-.item-box{
-    float: left;
-}
-.item-image{
-    float: left;
-}
-.amount-select-form{
-    margin-right: 50px;
-}
-.item-price{
-    margin-bottom: 50px;
-}
-img{
-  max-width: 70%;
+.post-index h2{
+  font-size: 22px;
+  font-weight: bold;
   text-align: center;
 }
-.row{
-    margin: 20px;
+
+.post-index h2::after{
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #000000;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.p{
-    margin-bottom: 0;
+
+.post-item{
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 0px;
+  padding-left: 60px;
+  padding-right: 60px;
+  overflow: scroll;
 }
+
+.post-item div{
+  flex-shrink: 0;
+  width: 260px;
+  margin-left: 75px;
+}
+
+.post-item div:first-child{
+  margin-left: 0;
+}
+
+.post-item dl{
+  margin-top: 20px;
+}
+
+.post-item dt{
+  font-weight: bold;
+}
+
+.post-item dd{
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+/*　投稿画像　*/
+img.post-img{
+  width: 230px;
+  height: 195px;
+  margin: auto;
+}
+
+/*　プロフィール画像　*/
+img.post-profile-img{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius:40%;
+  margin: 0 50px 0 0;
+}
+
+/*　ページネーション　*/
 .pagination {
-  justify-content: center;
+  margin: 10px 50px 0 50px;
+}
+
+.page{
+    text-align: center;
 }

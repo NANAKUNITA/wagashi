@@ -122,7 +122,10 @@ div.icon li a i{
 .collapse navbar-collapse ul{
   display: flex;
 }
-/*.container {
+
+/* ここをcontainerだけにしてしまうと、全てに適用されてしまうため、
+ container-menuにした。*/
+.container-menu {
   max-width: 1200px;
   height: 110px;
   margin-left: auto;
@@ -133,12 +136,6 @@ div.icon li a i{
   justify-content: space-between;
   align-items: center;
 }
-
-#content{
-  padding-top: 30px;
-  padding-bottom: 60px;
-}*/
-
 
 
 .recommendation-items {

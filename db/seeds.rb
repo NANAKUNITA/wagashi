@@ -35,7 +35,7 @@ Post.create!(
 )
 
 #sweet
-Sweet.create!(:name => "")
+Sweet.create!(:name => "花びら餅")
 Sweet.create!(:name => "")
 Sweet.create!(:name => "")
 Sweet.create!(:name => "")

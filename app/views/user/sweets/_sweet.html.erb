@@ -1,31 +1,43 @@
-            <div class="container my-5">
-                <div class="row"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2 class="month">1月</h2><br>
-                </div>
-                <div class="row">
-                                        <div class="col-md-3">
-                    <% @sweets.each do |sweet| %>
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br><br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
+<div class="container my-5">
+    <div class="sweet-index">
+        <h2>1月</h2>
+        <% @sweets.each do |sweet| %>
+        <ul class="sweet-item">
+            <li>
+                <dl>
+                  <dt>
+                    <%= link_to sweet_path(sweet) do %>
+                      <%= image_tag sweet.get_image %>
                     <% end %>
-                                        </div>
-            </div>
-                <div class="row"><!-- ここの部分もeach文の中に入れたほうがいいかも？ -->
-                    <h2 class="month">1月</h2><br>
-                </div>
-                <div class="row">
-                                        <div class="col-md-3">
-                    <% @sweets.each do |sweet| %>
-                        <%= link_to sweet_path(sweet) do %> <!-- URLに:idがつくため（）をつける -->
-                        <%= image_tag sweet.get_image %>
-                        <% end %>
-                        <br><br>
-                        <%= link_to sweet.name, sweet_path(sweet) %>
+                  </dt>
+                  <br>
+                  <dd>
+                    <%= link_to sweet.name, sweet_path(sweet) %>
+                  </dd>
+                </dl>
+            </li>
+        </ul>
+        <% end %>
+    </div>
+        <div class="sweet-index">
+        <h2>1月</h2>
+        <% @sweets.each do |sweet| %>
+        <ul class="sweet-item">
+            <li>
+                <dl>
+                  <dt>
+                    <%= link_to sweet_path(sweet) do %>
+                      <%= image_tag sweet.get_image %>
                     <% end %>
-                                        </div>
-            </div>
-            </div>
+                  </dt>
+                  <br>
+                  <dd>
+                    <%= link_to sweet.name, sweet_path(sweet) %>
+                  </dd>
+                </dl>
+            </li>
+        </ul>
+        <% end %>
+    </div>
+</div>
 

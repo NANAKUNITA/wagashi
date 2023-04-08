@@ -4,7 +4,6 @@ class User::PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.images.build
   end
 
   def create

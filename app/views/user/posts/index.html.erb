@@ -1,9 +1,12 @@
 <div class="container my-5">
-    <div class="post-index">
+    <div class="post-title">
         <h2>投稿一覧</h2>
-        <div class="post-item">
-            <% @posts.each do |post| %>
-            <div>
+          <div class="new-icon">
+            <%= link_to "+", new_post_path %>
+          </div>
+          <div class="post-item">
+             <% @posts.each do |post| %>
+             <div>
                 <dl>
                     <dt>
                       <%= link_to user_path(post.user) do %>
@@ -25,7 +28,7 @@
                 </dl>
             </div>
             <% end %>
-        </div>
+          </div>
     <div class="pagination">
         <div class="page">
           <%= paginate @posts %>

@@ -10,14 +10,14 @@
 User.create!(
     email: Faker::Internet.email,
     name: "hana2",
-    password: "abc1234"
-   #image: File.open("./app/assets/images/profile.jpg")
+    password: "abc1234",
+    #image: File.open("./app/assets/images/profile.jpg")
 )
 User.create!(
     email: Faker::Internet.email,
     name: "国丸屋",
-    password: "abc1234"
-   #image: File.open("./app/assets/images/profile2.jpg")
+    password: "abc1234",
+    #image: File.open("./app/assets/images/profile2.jpg")
 )
 
 #post

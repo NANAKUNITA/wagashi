@@ -1,27 +1,18 @@
 <div class="container my-5">
-    <div class="row 1">
+    <div class="user-title">
         <h2>マイページ</h2>
+        <div class="user-item">
+            <div>
+                <dl>
+                    <dt>
+                        <%= @user.name %>
+                        <%= image_tag @user.get_profile_image %>
+                    </dt>
+                    <dd>
+                        
+                    </dd>
+                </dl>
+            </div>
+        </div>
     </div>
-    <div class="profile-row"><!-- containerかrow -->
-        <td>ユーザーネーム</td>
-        <td><%= @user.name %></td>
-            <%= image_tag @user.get_profile_image(300,300)%>
-            <!--% if @user.id == current_user.id %>
-            <p><#%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-            <#% end %-->
-    </div><br><br>
-                
-    <div class="row 2">
-        <td>メールアドレス</td><!-- tdは必要か？ -->
-        <td><%= @user.email %></td>
-    </div><br><br>
-                
-    <div class="row 3">
-        <% if @user.id == current_user.id %>
-        <p><%= link_to "プロフィールを編集", edit_user_path(@user) %></p>
-        <% end %>
-    </div>
-                
-    <!--div class="row 4"
-        ブックマーク一覧-->
 </div>

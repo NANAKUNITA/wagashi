@@ -1,15 +1,24 @@
 <div class="container my-5">
+  <div class="col-md-6">
+    <div class="search">
+      <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
+        <%= form.text_field :keyword %>
+        <%= form.submit "検索" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-6">
     <div class="post-title">
         <h2>投稿一覧</h2>
           <div class="new-icon">
-            <%= link_to "+", new_post_path %>
+            <%= link_to "+", new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" %>
           </div>
           <div class="post-item">
              <% @posts.each do |post| %>
              <div>
                 <dl>
                     <dt>
-                      <%= link_to user_path(post.user) do %>
+                      <%= link_to post_path(post.user) do %>
                         <%= image_tag post.get_image, class: "post-img" %>
                       <% end %>
                     </dt>
@@ -19,8 +28,8 @@
                         <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
                           「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
                       <% end %>
-                      <%= link_to user_path(post.user), title: post.user.name do %>&ensp;
-                        <strong><%= post.user.name %></strong>
+                      <%= link_to post_path(post.id), title: post.user.name do %>
+                        <strong><i class="fa-regular fa-user"></i><span><%= post.user.name %></strong></span>
                       <% end %>
                       <br>
                       <%= post.content %>
@@ -29,10 +38,7 @@
             </div>
             <% end %>
           </div>
-    <div class="pagination">
-        <div class="page">
-          <%= paginate @posts %>
-        </div>
     </div>
     </div>
+        <%= paginate @posts %>
 </div>

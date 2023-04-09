@@ -14,8 +14,8 @@ img{
 }
 .post-title{
   background-color: #f8f8f8;
-  padding-top: 45px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .post-title h2{
@@ -37,8 +37,7 @@ img{
 
 .post-item{
   display: flex;
-  padding-top: 40px;
-  padding-bottom: 0px;
+  padding-bottom: 20px;
   padding-left: 60px;
   padding-right: 60px;
   overflow: scroll;
@@ -71,7 +70,10 @@ img{
 
 /*　index.html.erbの新規登録ボタンのアイコン */
 .new-icon{
-  
+  width: 180px;
+  height: 40px;
+  border-radius:40%;
+  background-color: #ffffff;
 }
 
 /*　投稿画像　*/
@@ -92,9 +94,7 @@ img.post-profile-img{
 
 /*　ページネーション　*/
 .pagination {
-  margin: 10px 50px 0 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
-.page{
-    text-align: center;
-}

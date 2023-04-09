@@ -1,19 +1,22 @@
 <div class="container my-5">
     <div class="post-title">
         <h2>新規投稿フォーム</h2>
+        <br><br>
         <div class="post-item">
-            <%= form_with model: @post do |f| %>
-            <%= f.file_field :image, accept: "image/*", class: "w-100" %>
             <div>
                 <dl>
+                   <%= form_with model: @post do |f| %>
+                   <%= f.file_field :image, accept: "image/*" %>
                     <dt>
                         <%= f.text_field :title, class:"form-control", placeholder: "タイトル" %>
                     </dt>
+                    <br>
                     <dd>
                         <%= f.text_area :content, class:"form-control", placeholder: "本文" %>
                     </dd>
                 </dl>
             </div>
+            <br><br>
             <div class="submit">
               <button class="button-60" role="button">投稿する</button>
             </div>

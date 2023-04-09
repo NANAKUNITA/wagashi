@@ -8,7 +8,7 @@ class User::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.images.present? #photsをimagesに？
+    if @post.image.present? 
       @post.save
       redirect_to root_path
       flash[:notice] = "投稿が保存されました"
@@ -19,7 +19,16 @@ class User::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:id]).per(4)
+    @posts = Post.page(params[:id]).per(10)
+  end
+  
+  def search
+    if params[:keyword].present?
+      @posts = Post.where('content LIKE ?', "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    else
+      @posts = Post.all
+    end
   end
 
   # ==========ここから追加する==========
@@ -34,6 +43,6 @@ class User::PostsController < ApplicationController
   
   private
     def post_params
-      params.require(:post).permit(:content, photos_attributes: [:image]).merge(user_id: current_user.id)
+      params.require(:post).permit(:title, :content, :image)
     end
 end

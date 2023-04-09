@@ -7,15 +7,14 @@ class User::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.image.present? 
-      @post.save
-      redirect_to root_path
-      flash[:notice] = "投稿が保存されました"
-    else
-      redirect_to root_path
-      flash[:alert] = "投稿に失敗しました"
-    end
+    @post=Post.new(post_params)
+    @post.user_id=current_user.id
+   if @post.save
+    redirect_to post_path
+   else
+     render :new
+   end
+
   end
 
   def index
@@ -31,15 +30,16 @@ class User::PostsController < ApplicationController
     end
   end
 
-  # ==========ここから追加する==========
   def show
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments
   end
-  # ==========ここまで追加する==========
-  def hashtag
-  @tag = Tag.find(params[:tag_id])
-  @posts = @tag.posts
-  end
+
+  #def hashtag
+  #@tag = Tag.find(params[:tag_id])
+  #@posts = @tag.posts
+  #end
   
   private
     def post_params

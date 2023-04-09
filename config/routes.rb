@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  namespace :user do
+    get 'comments/create'
+  end
+  get 'comments/create'
+  get 'comments/destroy'
 devise_for :users, skip:[:passwords], controllers:{
     registrations: "user/registrations",
     sessions: 'user/sessions'
@@ -30,7 +35,6 @@ devise_for :users, skip:[:passwords], controllers:{
       #resourceは、単数形にすると、/:idがURLに含まれなくなる。
     end
     #resourceは、単数形にすると、/:idがURLに含まれなくなる。
-    resources :comments, only: [:create, :destroy]
     patch '/users/withdraw' => 'users#withdraw'
     get '/users/confirm_withdraw' => 'users#confirm'
     resources :sweets, only:[:index, :show]

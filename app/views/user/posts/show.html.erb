@@ -1,6 +1,7 @@
 <div class="container my-5">
     <div class="post-title">
         <h2></h2>
+        <br><br>
           <div class="post-item">
              <div>
                 <dl>
@@ -15,6 +16,35 @@
                       <br>
                       <%= @post.content %>
                     </dd>
+                    <dd>
+                        <p>コメント件数：<%= @post.comments.count %></p>
+                        <% @post.comments.each do |comment| %>
+                          <p><%= image_tag @comment.user.get_profile_image %></p>
+                          <%= comment.user.name %>
+                          <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
+                        <% end %>
+                    </dd>
+                    <dd>
+                        <%= form_with model: [@post, @comment] do |f| %>
+                          <%= f.text_area :comment, placeholder: "コメントをここに" %>
+                          <%= f.submit "送信する" %>
+                        <% end %>
+                    </dd>
+                    <dt>
+                      コメント投稿者
+                    </dt>
+                    <dt>
+                      コメント内容
+                    </dt>
+                    <% @comments.each do |comment| %>
+                    <dd>
+                      <%= comment.user.name %>
+                    </dd>
+                    <dd>
+                      <%= comment.comment %>
+                    </dd>
+                      <%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
+                    <% end %>
                 </dl>
             </div>
           </div>

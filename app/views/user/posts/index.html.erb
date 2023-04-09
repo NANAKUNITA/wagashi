@@ -1,18 +1,18 @@
 <div class="container my-5">
-  <div class="col-md-6">
+    <div class="post-title">
+        <h2>投稿一覧</h2>
+        <br><br>
+          <div class="new-icon">
+            <%= link_to new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" do %>
+           <strong><i class="fa fa-regular fa-message-plus"></i><span>新規投稿する</span></strong>
+            <% end %>
+          </div>
     <div class="search">
       <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
         <%= form.text_field :keyword %>
         <%= form.submit "検索" %>
       <% end %>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="post-title">
-        <h2>投稿一覧</h2>
-          <div class="new-icon">
-            <%= link_to "+", new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" %>
-          </div>
           <div class="post-item">
              <% @posts.each do |post| %>
              <div>
@@ -38,7 +38,6 @@
             </div>
             <% end %>
           </div>
-    </div>
     </div>
         <%= paginate @posts %>
 </div>

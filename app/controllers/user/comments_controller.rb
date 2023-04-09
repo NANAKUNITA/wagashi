@@ -1,16 +1,23 @@
 class User::CommentsController < ApplicationController
     #postが赤くなる
   def create
-    post=Post.find(params[:post_id])
-    comment=current_user.comments.new(comment_params)
-    comment.post_id=post.id
-    comment.save
-    redirect_to post_path(post)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(comment_params)
+    @comment.user_id = current_user.id
+    if @comment.save
+    redirect_to request.referer
+    else
+     @post_new = Book.new
+      @comments = @post.comments
+      redirect_to new_post_path
+    end
   end
   
    def destroy
-    Comment.find(params[:id]).destroy
-    redirect_to post_path(params[:post_id])
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to request.referer
    end
 
   private

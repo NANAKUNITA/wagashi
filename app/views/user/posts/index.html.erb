@@ -3,9 +3,7 @@
         <h2>投稿一覧</h2>
         <br><br>
           <div class="new-icon">
-            <%= link_to new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" do %>
-           <strong><i class="fa fa-regular fa-message-plus"></i><span>新規投稿する</span></strong>
-            <% end %>
+            <%= link_to "+", new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" %>
           </div>
     <div class="search">
       <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
@@ -29,7 +27,7 @@
                           「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
                       <% end %>
                       <%= link_to post_path(post.id), title: post.user.name do %>
-                        <strong><i class="fa-regular fa-user"></i><span><%= post.user.name %></strong></span>
+                        <strong><i class="fa fa-regular fa-user"></i><span><%= post.user.name %></strong></span>
                       <% end %>
                       <br>
                       <%= post.content %>

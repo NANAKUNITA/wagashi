@@ -7,7 +7,7 @@ class User::RegistrationsController < Devise::RegistrationsController
     if resource.email == 'guest@example.com'
       redirect_to root_path, alert: 'ゲストユーザーは削除できません。'
     end
-end
+  end
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 

@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
-
-  namespace :user do
-    get 'comments/create'
-  end
-  get 'comments/create'
-  get 'comments/destroy'
-devise_for :users, skip:[:passwords], controllers:{
+ devise_for :users, skip:[:passwords], controllers:{
     registrations: "user/registrations",
     sessions: 'user/sessions'
   }
-  # 以下を追加
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
@@ -30,8 +23,9 @@ devise_for :users, skip:[:passwords], controllers:{
       resources :comments, only: [:create, :destroy] 
       collection do
           get 'search'
+          get :favorites
       end
-      resource :favorites, only: [:create, :destroy]
+      resources :favorites, only: [:create, :destroy]
       #resourceは、単数形にすると、/:idがURLに含まれなくなる。
     end
     #resourceは、単数形にすると、/:idがURLに含まれなくなる。

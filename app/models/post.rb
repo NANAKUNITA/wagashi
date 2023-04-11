@@ -4,6 +4,7 @@ class Post < ApplicationRecord
     has_many :tags
     has_many :comments, dependent: :destroy
     has_many :favorites, dependent: :destroy
+    has_many :favorite_posts, through: :favorites, source: :post
     
     has_one_attached :image
 
@@ -15,11 +16,8 @@ class Post < ApplicationRecord
       image
   end
   
-   def already_favorited?(user) #引数を受け取るように設定
-        favorites.where(user_id: user.id).exists?
-   end
-  #def favorited_by?(user)
-    #favorites.exists?(user_id: user.id)
-  #end
+  def favorite_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 
 end

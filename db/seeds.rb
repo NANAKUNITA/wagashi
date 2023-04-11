@@ -11,13 +11,13 @@ Admin.create(:email => 'admin@mail', :password => 'admin1234')
 
 #user
 User.create!(
-    email: Faker::Internet.email,
+    email: "hanako@mail",
     name: "hana2",
     password: "abc1234",
     #image: File.open("./app/assets/images/profile.jpg")
 )
 User.create!(
-    email: Faker::Internet.email,
+    email: "maru@mail",
     name: "国丸屋",
     password: "abc1234",
     #image: File.open("./app/assets/images/profile2.jpg")

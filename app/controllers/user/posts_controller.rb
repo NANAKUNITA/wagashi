@@ -9,12 +9,8 @@ class User::PostsController < ApplicationController
   def create
     @post=Post.new(post_params)
     @post.user_id=current_user.id
-   if @post.save
-    redirect_to post_path
-   else
-     render :new
-   end
-
+    @post.save
+    redirect_to posts_path
   end
 
   def index

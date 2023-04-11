@@ -41,7 +41,7 @@ img{
 }
 
 a{
-  color: inherit;
+  color: #0054a7;
   text-decoration: none;
 }
 
@@ -72,7 +72,7 @@ div.icon li{
 div.icon li a{
     display:block;
     padding:10px;
-    color:#000;
+    color: #f7bba2;
     text-decoration:none;
 }
 div.icon li a span{
@@ -148,7 +148,7 @@ footer{
   height: 120px;
   margin: 0 auto;
   color: #ffffff;
-  background-color: #24211b;
+  background-color: #0054a7;
   bottom: 0; /*下に固定*/
   position: relative;/*←相対位置*/
   padding-bottom: 50px;/*←footerの高さ*/
@@ -157,6 +157,7 @@ footer{
 
 .footer-text{
   display: flex;
+  color: #aaabab;
   flex-direction: column;
   align-items: center;
   margin: 50px 0 50px 0;

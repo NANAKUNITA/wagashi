@@ -40,7 +40,7 @@
                   <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
                 <!-- 管理者でログインしている時 -->
                 <% elsif admin_signed_in?%>
-                  <li class="nav-list-item"><%= link_to "投稿一覧", admin_root_path %></li>
+                  <li class="nav-list-item"><%= link_to "投稿一覧", admin_posts_path %></li>
                   <li class="nav-list-item"><%= link_to "ユーザー一覧", admin_users_path %></li>
                   <li class="nav-list-item"><%= link_to "季節ごとの和菓子一覧", admin_sweets_path %></li>
                   <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>

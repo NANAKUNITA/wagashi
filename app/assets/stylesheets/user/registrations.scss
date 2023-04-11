@@ -12,18 +12,6 @@
     text-align: center;
 }
 
-img{
-  width: 100px;
-  height: 100px;
-}
-
-.search{
-  display: flex;
-  width: 200px;
-  height: 100px;
-  justify-content: center;
-}
-
 .post-title{
   background-color: #ffffff;
   padding-top: 30px;
@@ -46,39 +34,6 @@ img{
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.post-item{
-  display: flex;
-  padding-bottom: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
-  overflow: scroll;
-  justify-content: center;
-}
-
-.post-item div{
-  flex-shrink: 0;
-  width: 260px;
-  margin-left: 75px;
-}
-
-.post-item div:first-child{
-  margin-left: 0;
-}
-
-.post-item dl{
-  margin-top: 20px;
-}
-
-.post-item dt{
-  font-weight: bold;
-}
-
-.post-item dd{
-  font-size: 13px;
-  line-height: 20px;
-  margin-top: 10px;
 }
 
 /*　index.html.erbの新規登録ボタンのアイコン */ 

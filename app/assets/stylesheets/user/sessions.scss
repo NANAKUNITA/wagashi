@@ -1,19 +1,104 @@
-* {
+*{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  color: #6c6b6b;
 }
 
-.submit{
-    border: 1px solid #999;
-    padding: 10px;
-    background: #fff9cc;
-    margin-top:10px;
+.container{
+  overflow: scroll;
 }
-#container{
-	height: 450px;
-	width: 550px;
-	margin-top: 150px;
-	margin-bottom: 150px;
+
+.row{
+    text-align: center;
+}
+
+.post-title{
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.post-title h2{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #0054a7;
+}
+
+.post-title h2::after{
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #f7bba2;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 「投稿する」ボタン　*/
+section {
+  max-width: 300px;
+  margin: 0 auto;
+}
+a.btn_05 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #e8a48b;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 2.0;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  position: relative;
+}
+a.btn_05:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px 40px 0 0;
+  border-color: #ffffff transparent transparent transparent;
+}
+a.btn_05:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40px 30px;
+  border-color: transparent transparent #efefef transparent;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  transform: rotate(16deg);
+}
+a.btn_05:hover {
+  background-color: #e6de6b;
+}
+a.btn_05 span {
+  position: relative;
+  padding-left: 16px;
+  letter-spacing: 0.05em;
+}
+a.btn_05 span:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -4px;
 }

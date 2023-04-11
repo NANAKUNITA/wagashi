@@ -1,32 +1,28 @@
 <div class="container my-5">
-<h2>ログイン</h2><br>
-<%= form_with model: @user, url: user_session_path do |f| %>
-  <div class="row">
-    <label class="col-lg-3"><h4>メールアドレス</h4></label>
-    <div class="col-lg-3">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-  </div><br>
+    <div class="post-title">
+        <strong><h2>ユーザーログイン</h2></strong>
+          <br><br>
+    <%= form_with model: @admin, url: user_session_path do |f| %> <!-- URLの変更 -->
+        <div class="row">
+            <div class="field">
+              <%= f.label :メールアドレス %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+        </div>
+          <br><br><br>
+        <div class="row">
+            <div class="field">
+              <%= f.label :パスワード %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+        </div>
+           <br><br><br>
+            <br><br>
+                <% end %>
 
-  <div class="row">
-    <label class="col-lg-3"><h4>パスワード</h4></label>
-    <div class="col-lg-3">
-    <%= f.password_field :password, autocomplete: "current-password" %>
+        <div class="section">
+            <a href="/sessions/new" class="btn-05"><span>ログイン</span></a>
+        </div>
     </div>
-  </div><br>
-
-  <div class="align" class= "submit">
-    <%= f.submit "ログイン", class: "btn btn-primary" %>
-  </div>
-  <br><br>
-<% end %>
-
-  <div class="action">
-    <div clas="col-xs-5">
-      <h4>会員登録がお済みでない方</h4>
-      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-      <%= link_to "こちら" %><strong>から新規登録を行なってください。</strong>
-      <% end %>
-    </div>
-  </div>
 </div>
+

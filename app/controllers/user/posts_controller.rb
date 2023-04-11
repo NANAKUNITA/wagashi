@@ -41,6 +41,10 @@ class User::PostsController < ApplicationController
   #@posts = @tag.posts
   #end
   
+  def favorites
+    @post = current_user.favorite_posts.includes(:user).order(created_at: :desc)
+  end
+  
   private
     def post_params
       params.require(:post).permit(:title, :content, :image)

@@ -8,9 +8,15 @@
                         <%= @user.name %>
                         <%= image_tag @user.get_profile_image %>
                     </dt>
-                    <dd>
-                        
-                    </dd>
+                       <div class="row">
+                        <p>ブックマーク一覧</p>
+                        <% if @favorite_list.present? %>
+                        <% @favorite_list.each do |post| %>
+                        <%= post.title %>
+                        <%= image_tag post.get_image %>
+                        <% end %>
+                        <% end %>
+                        </div>
                 </dl>
             </div>
         </div>

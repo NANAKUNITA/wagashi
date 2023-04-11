@@ -18,11 +18,11 @@
                     </dd>
                     <dd>
                         <p>コメント件数：<%= @post.comments.count %></p>
-                        <% @post.comments.each do |comment| %>
-                          <p><%= image_tag @comment.user.get_profile_image %></p>
-                          <%= comment.user.name %>
-                          <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
-                        <% end %>
+                        <!--% @post.comments.each do |comment| %>
+                          <!--p><!--%= image_tag @comment.user.get_profile_image %></p-->
+                          <!--%= comment.user.name %>
+                          <!%= comment.created_at.strftime('%Y/%m/%d') %><!%= comment.comment %>
+                        <!--% end %-->
                     </dd>
                     <dd>
                         <%= form_with model: [@post, @comment] do |f| %>
@@ -43,8 +43,23 @@
                     <dd>
                       <%= comment.comment %>
                     </dd>
+                    <% if @post.user == current_user %>
                       <%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
                     <% end %>
+                    <% end %>
+     <% if @post.favorited_by?(current_user) %>
+    <p>
+      <%= link_to post_favorites_path(@post), method: :delete do %>
+        ♥<%= @post.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to post_favorites_path(@post), method: :post do %>
+        ♡<%= @post.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
                 </dl>
             </div>
           </div>

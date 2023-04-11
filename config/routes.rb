@@ -15,20 +15,16 @@ Rails.application.routes.draw do
     root 'homes#top'
     # 以下を追加
     resources :users, only: [:show, :edit, :update] do
-        # マイページのルーティングにネスト
-         get :favorites, on: :collection
+        get :favorites, on: :collection
     end
     get '/post/hashtag/:name', to: "posts#hashtag"
     resources :posts, only: [:show, :index, :create, :new, :update, :edit, :destroy] do #indexは、 root 'homes#top'のため、ここでは指定しない
+      resource :favorites, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy] 
       collection do
           get 'search'
-          get :favorites
       end
-      resources :favorites, only: [:create, :destroy]
-      #resourceは、単数形にすると、/:idがURLに含まれなくなる。
     end
-    #resourceは、単数形にすると、/:idがURLに含まれなくなる。
     patch '/users/withdraw' => 'users#withdraw'
     get '/users/confirm_withdraw' => 'users#confirm'
     resources :sweets, only:[:index, :show]
@@ -36,9 +32,7 @@ end
   #管理者側
   namespace :admin do
      root 'homes#top'
-     resources :posts, only: [:show, :destroy] #do #indexは、 root 'homes#top'のため、ここでは指定しない
-        #resources :comments, only: [:create, :destroy] #書き直し！！
-     #end
+     resources :posts, only: [:show, :destroy]  #indexは、 root 'homes#top'のため、ここでは指定しない
      resources :users, only: [:index, :show]
      resources :sweets, only: [:show, :index, :new, :create, :edit, :update]
      resources :genres, only: [:index, :create, :edit, :update]

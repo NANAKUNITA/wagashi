@@ -1,0 +1,47 @@
+<div class="container my-5">
+    <div class="post-title">
+        <h2></h2>
+        <br><br>
+          <div class="post-item">
+             <div>
+                <dl>
+                    <dt>
+                      <%= image_tag @post.get_image, class: "post-img" %>
+                    </dt>
+                    <dd>
+                      <%= image_tag @post.user.get_profile_image, class: "post-profile-img" %>
+                        <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
+                          「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
+                      <strong><i class=" fa fa-regular fa-user"></i><span><%= @post.user.name %></strong></span>
+                      <br>
+                      <%= @post.content %>
+                    </dd>
+                    <dd>
+                        <% if admin_signed_in? %>
+                          <%= link_to "削除", admin_post_path(@post), method: :delete, "data-confirm" => "削除しますか？" %>
+                        <% end %>
+                    </dd>
+                    <dt>
+                      コメント投稿者
+                    </dt>
+                    <dt>
+                      コメント内容
+                    </dt>
+                    <% @comments.each do |comment| %>
+                    <dd>
+                      <%= comment.user.name %>
+                    </dd>
+                    <dd>
+                      <%= comment.comment %>
+                    </dd>
+                     <dd>
+                     <% if admin_signed_in? %>
+                       <%= link_to "削除", post_comment_path(@post, comment), method: :delete, "data-confirm" => "削除しますか？" %>
+                     <% end %>
+                     </dd>
+                    <% end %>
+                </dl>
+            </div>
+          </div>
+    </div>
+</div>

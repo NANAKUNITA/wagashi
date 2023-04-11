@@ -32,9 +32,9 @@ end
   #管理者側
   namespace :admin do
      root 'homes#top'
-     resources :posts, only: [:show, :destroy]  #indexは、 root 'homes#top'のため、ここでは指定しない
-     resources :users, only: [:index, :show]
+     #delete '/posts/:id' => 'posts#destroy_post'
+     resources :posts, only: [:index, :show, :destroy]  #indexは、 root 'homes#top'のため、ここでは指定しない
+     resources :users, only: [:index, :show, :destroy]
      resources :sweets, only: [:show, :index, :new, :create, :edit, :update]
-     resources :genres, only: [:index, :create, :edit, :update]
 end
 end

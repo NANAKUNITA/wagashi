@@ -23,6 +23,9 @@
                       </td>
                       <!-- ↑氏名をクリックしたら、admin/userのshowへ遷移するため、link_toの後のパスは、showのパスを指定する。 -->
                       <td><%= user.email %></td>
+                      <td>
+                          <%= link_to "削除", admin_user_path(user.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+                      </td>
                     </tr>
                    <% end %>
                 </tbody>

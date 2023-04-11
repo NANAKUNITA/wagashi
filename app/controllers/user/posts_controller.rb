@@ -45,6 +45,12 @@ class User::PostsController < ApplicationController
     @post = current_user.favorite_posts.includes(:user).order(created_at: :desc)
   end
   
+  def destroy
+   @post = Post.find(params[:id])
+   @post.destroy
+   redirect_to posts_path
+  end
+
   private
     def post_params
       params.require(:post).permit(:title, :content, :image)

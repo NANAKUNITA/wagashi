@@ -1,67 +1,77 @@
 <div class="container my-5">
     <div class="post-title">
-        <h2></h2>
-        <br><br>
-          <div class="post-item">
-             <div>
-                <dl>
-                    <dt>
-                      <%= image_tag @post.get_image, class: "post-img" %>
-                    </dt>
-                    <dd>
-                      <%= image_tag @post.user.get_profile_image, class: "post-profile-img" %>
-                        <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
-                          「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
-                      <strong><i class=" fa fa-regular fa-user"></i><span><%= @post.user.name %></strong></span>
-                      <br>
-                      <%= @post.content %>
-                    </dd>
-                    <dd>
-                        <p>コメント件数：<%= @post.comments.count %></p>
-                        <!--% @post.comments.each do |comment| %>
-                          <!--p><!--%= image_tag @comment.user.get_profile_image %></p-->
-                          <!--%= comment.user.name %>
-                          <!%= comment.created_at.strftime('%Y/%m/%d') %><!%= comment.comment %>
-                        <!--% end %-->
-                    </dd>
-                    <dd>
-                        <%= form_with model: [@post, @comment] do |f| %>
-                          <%= f.text_area :comment, placeholder: "コメントをここに" %>
-                          <%= f.submit "送信する" %>
-                        <% end %>
-                    </dd>
-                    <dt>
-                      コメント投稿者
-                    </dt>
-                    <dt>
-                      コメント内容
-                    </dt>
-                    <% @comments.each do |comment| %>
-                    <dd>
-                      <%= comment.user.name %>
-                    </dd>
-                    <dd>
-                      <%= comment.comment %>
-                    </dd>
-                    <% if @post.user == current_user %>
-                      <%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
+      <%= form_with model: @post, url: post_path do |f| %>
+    <h2><%= @post.user.name %>さんの投稿</h2>
+    <br><br>
+    <div class="post-item">
+      <div>
+        <dl>
+          <dt>
+             <%= image_tag @post.get_image, class: "post-img" %>
+          </dt>
+          <dd>
+             <%= image_tag @post.user.get_profile_image, class: "post-profile-img" %>
+                <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
+                 「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
+              <strong><i class=" fa fa-regular fa-user"></i><span><%= @post.user.name %></strong></span>
+                <% if @post.favorited_by?(current_user) %>
+                  <p>
+                    <%= link_to post_favorites_path(@post), method: :delete do %>
+                      ♥<%= @post.favorites.count %>
                     <% end %>
+                  </p>
+                <% else %>
+                  <p>
+                    <%= link_to post_favorites_path(@post), method: :post do %>
+                      <h4>♡<%= @post.favorites.count %></h4>
                     <% end %>
-     <% if @post.favorited_by?(current_user) %>
-    <p>
-      <%= link_to post_favorites_path(@post), method: :delete do %>
-        ♥<%= @post.favorites.count %> いいね
-      <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to post_favorites_path(@post), method: :post do %>
-        ♡<%= @post.favorites.count %> いいね
-      <% end %>
-    </p>
-  <% end %>
-                </dl>
-            </div>
-          </div>
+                  </p>
+                <% end %>
+              <%= @post.content %>
+              <% if @post.user == current_user %>
+                <%= link_to "編集する", edit_post_path(@post), class: "btn btn-outline-danger mx-auto my-1" %>
+              <% end %>
+              <% end %>
+          </dd>
+        </dl>
+      </div>
     </div>
+  </div>
+</div>
+
+<div class="col-md-6">
+    <div class="col-md-6">
+    <div class="post-title">
+      <h2></h2>
+      <br><br>
+        <div class="post-item">
+          <div>
+            <dl>
+              <dt>
+                <p>コメント件数：<%= @post.comments.count %></p>
+              </dt>
+              <dd>
+                <%= form_with model: [@post, @comment] do |f| %>
+                  <%= f.text_area :comment, placeholder: "コメントをここに" %>
+                  <%= f.submit "送信する" %>
+                <% end %>
+              </dd>
+              <br><br>
+              <% @comments.each do |comment| %>
+              <dt>
+                <h6>コメントユーザー</h6>
+                <%= comment.user.name %>
+              </dt>
+              <dd>
+                <%= comment.comment %>
+                  <% if @post.user == current_user %>
+                    <%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
+                  <% end %>
+              </dd>
+              <% end %>
+            </dl>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>

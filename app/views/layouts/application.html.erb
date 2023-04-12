@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title class="text-success">和菓子</title>
+    <title class="text-success">和菓子検索コミュニティサイト</title>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -17,21 +17,14 @@
   <body class="d-flex flex-column vh-100">
     <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="icon">
-             <ul>
-                <li><a href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a></li>
-                <li><a href="#"><i class="fa fa-twitter-square"></i><span>Twitter</span></a></li>
-                <li><a href="#"><i class="fa fa-facebook-square"></i><span>FaceBook</span></a></li>
-                <li><a href="#"><i class="fa fa-pinterest"></i></i><span>Pinterest</span></a></li>
-              </ul>
-          </div>
         <div class="container-menu mb-6">
-          <a class="navbar-brand p-3" href="/"><%= link_to root_path, class: "header_logo" do %> <%= image_tag('wagashi01.jpg', class: 'header_logo') %><% end %></a>
+          <a class="navbar-brand p-3" href="/">
+            <%= link_to root_path, class: "header_logo" do %> <%= image_tag('wagashi01.jpg', class: 'header_logo') %><% end %></a>
           <nav class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <!-- 会員でログインしている時 -->
                 <% if user_signed_in? %>
-                  <span class="u h7 text-white strong">
+                <span class="u h7 text-white strong">
                     ようこそ、<%= current_user.name %>さん！
                   </span>
                   <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></i>
@@ -64,11 +57,17 @@
       
         <footer>
       <div class="container">
-        <div class="row">
           <div class="footer-text">
             <p>©Wagashi.inc</p>
+          <div class="icon">
+             <ul>
+                <li><a href="#"><i class="fa fa-instagram"></i><span><br>Instagram</span></a></li>
+                <li><a href="#"><i class="fa fa-twitter-square"></i><span><br>Twitter</span></a></li>
+                <li><a href="#"><i class="fa fa-facebook-square"></i><span><br>FaceBook</span></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></i><span><br>Pinterest</span></a></li>
+              </ul>
           </div>
-        </div>
+          </div>
       </div>
       </footer>
   </body>

@@ -47,10 +47,7 @@ img{
 .post-item{
   display: flex;
   padding-bottom: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
   overflow: scroll;
-  justify-content: center;
 }
 
 .post-item div{
@@ -69,6 +66,9 @@ img{
 
 .post-item dt{
   font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8a48b;
+  display: flex;
 }
 
 .post-item dd{
@@ -88,8 +88,8 @@ img{
 
 /*　投稿画像　*/
 img.post-img{
-  width: 230px;
-  height: 195px;
+  width: 260px;
+  height: 225px;
   /*margin: auto;*/
   border:1px solid #0054a7;
 }
@@ -175,4 +175,10 @@ a.btn_05 span:before {
   top: 50%;
   left: 0;
   margin-top: -4px;
+}
+
+/* show-comment */
+textarea {
+width:150%;
+height:130px;
 }

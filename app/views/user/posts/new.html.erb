@@ -7,6 +7,7 @@
                 <dl>
                    <%= form_with model: @post do |f| %>
                    <%= f.file_field :image, accept: "image/*" %>
+                   <br><br>
                     <dt>
                         <%= f.text_field :title, class:"form-control", placeholder: "タイトル" %>
                     </dt>

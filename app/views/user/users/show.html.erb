@@ -1,23 +1,40 @@
 <div class="container my-5">
-    <div class="user-title">
-        <h2>マイページ</h2>
-        <div class="user-item">
-            <div>
-                <dl>
-                    <dt>
-                        <%= @user.name %>
-                        <%= image_tag @user.get_profile_image %>
-                    </dt>
-                       <div class="row">
-                        <p>ブックマーク一覧</p>
-                        <% if @favorite_list.present? %>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="user-title">
+                <h2>マイページ</h2>
+                <div class="user-item">
+                    <div>
+                        <dl>
+                            <dt>
+                              <%= image_tag @user.get_profile_image, class: "user-profile" %>
+                            </dt>
+                            <dd>
+                              <%= @user.name %>
+                            </dd>
+                            <dd>
+                              <%= link_to "編集する", edit_user_path(@user), class: "btn btn-outline-danger mx-auto my-1" %>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="user-title">
+                <h2>ブックマーク一覧</h2>
+                <div class="user-item">
+                    <div>
+                      <% if @favorite_list.present? %>
                         <% @favorite_list.each do |post| %>
-                        <%= post.title %>
-                        <%= image_tag post.get_image %>
-                        <% end %>
-                        <% end %>
-                        </div>
-                </dl>
+                          <%= post.title %>
+                          <%= image_tag post.get_image %>
+                         <% end %>
+                      <% end %>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,44 +1,47 @@
-<!-- レイアウト -->
-<h2>新規会員登録</h2>
-
-<%= form_with model: @user, url: user_registration_path do |f| %> <!-- URLの変更 -->
-  <!--%= render "user/shared/error_messages", resource: resource %-->
-<%= devise_error_messages! %>
-  <div class="row">
-    <label class="col-lg-3">ユーザー名</label>
-    <div class="col-lg-3">
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名" %>
+<div class="container">
+  <div class="post-title">
+    <strong><h2>新規会員登録</h2></strong>
+    <br><br>
+    <div class="post-item">
+      <div>
+        <dl>
+          <%= form_with model: @user, url: user_registration_path do |f| %>
+          <%= devise_error_messages! %>
+          <dt>
+            <h6>ユーザーネーム</h6>
+          </dt>
+          <dd>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名" %>
+          </dd>
+          <dd>
+            <strong><%= f.label :メールアドレス %><br /></strong>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </dd>
+          <dd>
+            <strong><%= f.label :パスワード %></strong>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> 文字以上)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </dd>
+          <dd>
+            <div class="actions">
+              <%= f.submit "新規会員登録" %>
+            </div>
+          </dd>
+          <dd>
+            <h3>既に登録済みの方</h3>
+            <div class="col-lg-3">
+              <%- if controller_name != 'sessions' %>
+                <%= link_to "こちら", new_user_session_path %><strong>から新規登録を行なってください。</strong><!-- pathを変更するかも -->
+              <% end %>
+            </div>
+          <% end %>
+          </dd>
+        </dl>
+          <a href="/users/sign_in"><i class="fa-solid fa-right-to-bracket"></i><span><br>ログイン</span></a>
+        <!--%= render "user/shared/links" %> <!-- ここは記入しておく？ -->
+      </div>
     </div>
-  </div><br>
-  
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
-  <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード（確認用） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "新規会員登録" %>
-  </div>
-  
-  <h3>既に登録済みの方</h3>
-  <div class="col-lg-3">
-    <%- if controller_name != 'sessions' %>
-    <%= link_to "こちら", new_user_session_path %><strong>から新規登録を行なってください。</strong><!-- pathを変更するかも -->
-    <% end %>
-  </div>
-<% end %>
-
-<%= render "user/shared/links" %> <!-- ここは記入しておく？ -->
+</div>

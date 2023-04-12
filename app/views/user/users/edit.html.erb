@@ -1,26 +1,27 @@
-<div class="split">
-    <div class="split-item split-left">
-        <div class="split-left__inner">
-            <div class="row 1">
-              <h2>プロフィール編集</h2>
+<div class="container my-5">
+    <div class="user-title">
+        <h2>プロフィール編集</h2>
+        <br><br>
+        <div class="user-item">
+            <div>
+                <dl>
+                    <%= form_with model:@user do |f| %>
+                    <dt>
+                        <%= f.file_field:profile_image, placeholder:"プロフィール画像", accept:"image/*"%>
+                    </dt>
+                    <dd>
+                        <%= f.text_field :name, autofocus: true,id:"inputName", placeholder:"ユーザーネーム"%>
+                        <%= f.submit "変更を保存", class: "btn btn-primary text-right" %>
+                    </dd>
+                    <br>
+                    <br>
+                    <dd>
+                        <p>退会をご希望の方はこちらから退会手続きにお進みください。</p><br>s
+                        <%= link_to "退会手続きへ" , users_confirm_withdraw_path %>
+                    </dd>
+                    <% end %>
+                </dl>
             </div>
-              <%= form_with model:@user do |f| %>
-              <label for="inputName">Name</label><!-- Nameの書き換えは、する？-->
-              <%= f.text_field :name, autofocus: true,id:"inputName", placeholder:"名前"%>
-              <label for="inputImage">ProfileImage</label><!-- ProfileImageの書き換えは、する？-->
-              <%= f.file_field:profile_image, placeholder:"プロフィール画像", accept:"image/*"%>
-              <button class="button-56" role="button"><%= f.submit "変更を保存"%></button><!-- buttonはあってる？ -->
-              <% end %>
-            <div class="row 2">
-                <p>退会をご希望の方はこちらから退会手続きにお進みください。</p><br><br>
-                <%= link_to "退会手続きへ" , users_confirm_withdraw_path %>
-            </div>
-        </div><!--split-left__inner-->
-    </div><!--split-item split-left-->
-    
-    <div class="split-item split-right">
-        <div class="split-right__inner">
-            right
-        </div><!--split-right__inner-->
-    </div><!--split-item split-right-->
-</div><!--split-->
+        </div>
+    </div>
+</div>

@@ -24,13 +24,13 @@
             <ul class="navbar-nav ml-auto">
                 <!-- 会員でログインしている時 -->
                 <% if user_signed_in? %>
-                <span class="u h7 text-white strong">
-                    ようこそ、<%= current_user.name %>さん！
-                  </span>
                   <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></i>
                   <li class="nav-list-item"><%= link_to "投稿一覧", posts_path %></i>
                   <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user) %></li>
                   <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
+                   <span class="u h7 text-white strong">
+                    ようこそ、<%= current_user.name %>さん！
+                   </span>
                 <!-- 管理者でログインしている時 -->
                 <% elsif admin_signed_in?%>
                   <li class="nav-list-item"><%= link_to "投稿一覧", admin_posts_path %></li>

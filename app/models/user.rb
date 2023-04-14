@@ -12,12 +12,12 @@ class User < ApplicationRecord
           has_one_attached :profile_image
 # 以下を追加
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
+    find_or_create_by!(name: 'ゲスト') do |user|
       user.password = SecureRandom.urlsafe_base64
       # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
-      user.name = "ゲスト"
     end
   end
+  
   def get_profile_image
     unless profile_image.attached?
       file_path = Rails.root.join('app/assets/images/no_image.jpg')

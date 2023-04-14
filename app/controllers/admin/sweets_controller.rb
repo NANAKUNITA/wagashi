@@ -2,7 +2,8 @@ class Admin::SweetsController < ApplicationController
     #before_action :authenticate_user!
      
  def index
-    @sweets=Sweet.page(params[:page]).per(2) 
+    @sweets=Sweet.page(params[:page]).per(12) 
+    @sweet=Sweet.page(params[:page]).per(3)
  end
      
  def show

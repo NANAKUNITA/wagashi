@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  month: MyString
+  month: 1
   description: MyText
 
 two:
   name: MyString
-  month: MyString
+  month: 1
   description: MyText

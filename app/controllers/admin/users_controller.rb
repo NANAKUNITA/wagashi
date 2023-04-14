@@ -15,5 +15,5 @@ class Admin::UsersController < ApplicationController
     @user = user.find(params[:id])
     @user.destroy
     redirect_to admin_user_path
-  end
+    end
 end

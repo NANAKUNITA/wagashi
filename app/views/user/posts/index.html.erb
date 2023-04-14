@@ -1,15 +1,18 @@
 <div class="container my-5">
     <div class="post-title">
         <h2>投稿一覧</h2>
-        <br><br>
+        <br>
           <div class="new-icon">
             <%= link_to "+", new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" %>
           </div>
     <div class="search">
       <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
         <%= form.text_field :keyword %>
+        <br><br>
+      <div class="search-box">
         <%= form.submit "検索" %>
       <% end %>
+      </div>
     </div>
           <div class="post-item">
              <% @posts.each do |post| %>

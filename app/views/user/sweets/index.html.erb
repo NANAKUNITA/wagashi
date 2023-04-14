@@ -1,51 +1,12 @@
 <div class="container my-5">
     <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
+                <% @sweet.each do |sweet| %>
+
+                <h2><%= sweet.month %>月</h2>
+
         <%= render 'sweet', sweets: @sweets %>
-    </div>
-        <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
-    </div>
-    <div class="sweet-index">
-        <h2><%= @sweets.month %>月</h2>
-        <%= render 'sweet', sweets: @sweets %>
+            <% end %>
+
     </div>
 </div>
 

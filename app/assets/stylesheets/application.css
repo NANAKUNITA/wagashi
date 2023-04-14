@@ -157,9 +157,10 @@ div.icon li a i{
 
 footer{
   border-top: 2px solid #f7bba2;
-  ine-height: 14px;
+  line-height: 14px;
   background-color: #0054a7;
-    text-align: center;
+  text-align: center;
+  bottom: 0;
 }
 
 .footer-text{

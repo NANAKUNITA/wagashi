@@ -1,0 +1,75 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  overflow: scroll;
+}
+
+.sweet-index{
+  background-color: #ffffff;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+
+.sweet-index h2{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sweet-index h2::after{
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #f7bba2;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sweet-item{
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 426px;
+  padding-right: 60px;
+  overflow: scroll;
+}
+
+.sweet-item div{
+  flex-shrink: 0;
+  width: 260px;
+  margin-left: 75px;
+}
+
+.sweet-item div:first-child{
+  margin-left: 0;
+}
+
+.sweet-item dl{
+  margin-top: 20px;
+}
+
+.sweet-item dt{
+  font-weight: bold;
+}
+
+.sweet-item dd{
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+/*　和菓子画像　*/
+.sweet-img{
+  display: block;
+  width: 260px;
+  height: 260px;
+  border-radius:40%;
+  margin: 0 auto;
+  border:1px solid #0054a7;
+}

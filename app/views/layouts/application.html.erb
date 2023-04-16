@@ -24,8 +24,8 @@
             <ul class="navbar-nav ml-auto">
                 <!-- 会員でログインしている時 -->
                 <% if user_signed_in? %>
-                  <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></i>
-                  <li class="nav-list-item"><%= link_to "投稿一覧", posts_path %></i>
+                  <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></li>
+                  <li class="nav-list-item"><%= link_to "投稿一覧", posts_path %></li>
                   <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user) %></li>
                   <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
                    <span class="u h7 text-white strong">
@@ -41,7 +41,7 @@
                 <% else %>
                   <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></li>
                   <li class="nav-list-item"><%= link_to "投稿一覧", posts_path %></li>
-                  <li class="nav-list-item"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></li>
+                  <li class="nav-list-item"><%= link_to "ゲストログイン（閲覧用）", login_guest_path, method: :post %></li>
                   <li class="nav-list-item"><%= link_to "新規登録", new_user_registration_path %></li>
                   <li class="nav-list-item"><%= link_to "ログイン", new_user_session_path %></li>
                 <% end %>
@@ -61,10 +61,10 @@
             <p>©Wagashi.inc</p>
           <div class="icon">
              <ul>
-                <li><a href="#"><i class="fa fa-instagram"></i><span><br>Instagram</span></a></li>
-                <li><a href="#"><i class="fa fa-twitter-square"></i><span><br>Twitter</span></a></li>
-                <li><a href="#"><i class="fa fa-facebook-square"></i><span><br>FaceBook</span></a></li>
-                <li><a href="#"><i class="fa fa-pinterest"></i></i><span><br>Pinterest</span></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></i></a></li>
               </ul>
           </div>
           </div>

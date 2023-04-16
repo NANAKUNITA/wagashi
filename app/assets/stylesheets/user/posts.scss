@@ -67,7 +67,7 @@ input.btn.btn-primary{
   text-align: right;
   background-color: #ffffff;
   padding-top: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 80px;
 }
 
 .post-title h2{
@@ -75,6 +75,7 @@ input.btn.btn-primary{
   font-weight: bold;
   text-align: center;
   color: #0054a7;
+  overflow: scroll;
 }
 
 .post-title h2::after{
@@ -90,7 +91,7 @@ input.btn.btn-primary{
 
 .post-item{
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 80px;
   overflow: scroll;
   text-align: center;
 }
@@ -99,6 +100,7 @@ input.btn.btn-primary{
   flex-shrink: 0;
   width: 260px;
   margin-left: 75px;
+  padding-bottom: 80px;
 }
 
 .post-item div:first-child{
@@ -120,6 +122,7 @@ input.btn.btn-primary{
   font-size: 13px;
   line-height: 20px;
   margin-top: 10px;
+  padding-bottom: 30px;
 }
 
 /*　index.html.erbの新規登録ボタンのアイコン */ 
@@ -165,7 +168,7 @@ img.post-profile-img{
 }
 
 /*　ページネーション　*/
-.pagination {
-  padding-top: 10px;
+div.pagination {
+  padding-top: 20px;
   padding-bottom: 20px;
 }

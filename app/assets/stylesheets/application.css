@@ -34,6 +34,11 @@ body{
   font-size: 20px;
   color: #000000;
   line-height: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  overflow: scroll;
 }
 
 img{
@@ -90,6 +95,7 @@ div.icon li a{
 div.icon li a span{
     /*display:inline-block; ここを入れると、Instagramなどの表記がなくなる*/
     text-indent:-9999px;
+    text-decoration:none;
 }
 
 div.icon li a i{
@@ -108,6 +114,7 @@ div.icon li a i{
   /*font-weight: bold;*/
 }
 .main {
+  flex: 1;
   width: 840px; /* 横幅840px */
   display: flex; /* Flexboxの利用 */
   justify-content: center; /* 要素の横並び・中央寄せ */
@@ -156,11 +163,15 @@ div.icon li a i{
 }
 
 footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 140px; /* フッターの高さを指定 */
+  background-color: #0054a7;
+  color: #fff;
   border-top: 2px solid #f7bba2;
   line-height: 14px;
-  background-color: #0054a7;
   text-align: center;
-  bottom: 0;
 }
 
 .footer-text{
@@ -168,5 +179,5 @@ footer{
   color: #f7bba2;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0 50px 0;
+  margin: 50px 0 10px 0;
 }

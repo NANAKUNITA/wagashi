@@ -10,11 +10,9 @@ class User < ApplicationRecord
          #has_many :favorite_posts, through: :favorites, source: :post 
 
           has_one_attached :profile_image
-# 以下を追加
   def self.guest
-    find_or_create_by!(name: 'ゲスト') do |user|
+    find_or_create_by!(name: 'guest', email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
     end
   end
   

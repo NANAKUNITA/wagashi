@@ -1,12 +1,24 @@
 <div class="container my-5">
-    <div class="sweet-index">
-                <% @sweet.each do |sweet| %>
-
-                <h2><%= sweet.month %>月</h2>
-
-        <%= render 'sweet', sweets: @sweets %>
-            <% end %>
-
+  <% @sweets.group_by(&:month).each do |month, sweets| %>
+    <div class="row">
+      <h2><%= month %>月</h2>
+      <% sweets.each do |sweet| %>
+      <div lass="col-md-6">
+        <div class="sweet-item">
+          <div>
+            <dl>
+                <dt>
+                  <%= link_to sweet_path(sweet) do %>
+                  <%= image_tag sweet.get_image, class: "sweet-img" %>
+                  <% end %>
+                </dt>
+              <dd><%= sweet.name %></dd>
+              <dd><%= sweet.description %></dd>
+            </dl>
+          </div>
+        </div>
+        </div>
+      <% end %>
     </div>
+  <% end %>
 </div>
-

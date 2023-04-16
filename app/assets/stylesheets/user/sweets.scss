@@ -11,13 +11,15 @@
 .sweet-index{
   background-color: #ffffff;
   padding-top: 45px;
-  padding-bottom: 55px;
+  padding-bottom: 80px;
 }
 
 .sweet-index h2{
   font-size: 22px;
   font-weight: bold;
   text-align: center;
+  color: #0054a7;
+  overflow: scroll;
 }
 
 .sweet-index h2::after{
@@ -32,18 +34,17 @@
 }
 
 .sweet-item{
-  display: flex;
   padding-top: 40px;
   padding-bottom: 10px;
-  padding-left: 60px;
+  padding-left: 200px;
   padding-right: 60px;
   overflow: scroll;
 }
 
 .sweet-item div{
-  flex-shrink: 0;
   width: 260px;
   margin-left: 75px;
+  padding-bottom: 80px;
 }
 
 .sweet-item div:first-child{
@@ -62,11 +63,11 @@
   font-size: 13px;
   line-height: 20px;
   margin-top: 10px;
+  padding-bottom: 30px;
 }
 
 /*　和菓子画像　*/
 .sweet-img{
-  display: block;
   width: 260px;
   height: 260px;
   border-radius:40%;

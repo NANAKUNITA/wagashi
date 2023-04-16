@@ -1,0 +1,26 @@
+<div class="container my-5">
+  <div class="sweet-index">
+  <%= form_with model: @sweet, url: sweet_path do |f| %>
+    <h2><%= @sweet.name %></h2>
+    <br>
+  <div class="sweet-item">
+      <div>
+        <dl>
+          <dt>
+            <%= image_tag @sweet.get_image, class: "sweet-img" %>
+          </dt>
+          <br>
+          <dd>
+            <%= @sweet.name %>
+          </dd>
+          <dd>
+            <%= @sweet.description %>
+          </dt>
+        </d>
+      </div>
+  </div>
+  <% end %>
+  </div>
+</div>
+
+<!-- monthをmigrateに追加して、同じ内容を繰り返さないように、seeds.rbを編集する。-->

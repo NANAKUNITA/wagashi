@@ -6,13 +6,16 @@
 
 .user{
   display:inline-block;
-  background-color:#ffffff;
+  background-color: #0054a7;
   padding:30px 75px;
   color:#f7bba2;
   border-radius:8px;
   border-bottom:7px solid #f7bba2;
   transition:.1s;
   cursor:pointer;
+}
+.user a { 
+  color: #ffffff; 
 }
 .user:hover{
   border-bottom-width:0;

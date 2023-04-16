@@ -1,7 +1,8 @@
 class Post < ApplicationRecord
     belongs_to :user
     has_many :post_tags, dependent: :destroy
-    has_many :tags
+    has_many :tags, through: :post_tags
+    #has_many :tags
     has_many :comments, dependent: :destroy
     has_many :favorites, dependent: :destroy
     has_many :favorite_posts, through: :favorites, source: :post
@@ -17,7 +18,7 @@ class Post < ApplicationRecord
   end
   
    def favorited_by?(user)
-    favorites.exists?(user_id: user.id)
+    favorites.exists?(user_id: user&.id)
    end
 
 end

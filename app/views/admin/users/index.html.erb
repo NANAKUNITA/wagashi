@@ -22,7 +22,7 @@
                       </td>
                       <td><%= user.email %></td>
                       <td>
-                          <%= button_to "削除", admin_users_path(user.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
+                          <%= button_to "削除", admin_user_path(user.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"} %>
                       </td>
                     </tr>
                    <% end %>

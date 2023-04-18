@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 #会員用
-    scope module: :user do
+scope module: :user do
     root to:  "posts#index"
-    post '/users/guest_sign_in', to: 'sessions#new_guest'
+    post '/users/guest_sign_in', to: 'users#new_guest'
     resources :users, only: [:show, :edit, :update] do
         get :favorites, on: :collection
     end
@@ -31,12 +31,12 @@ Rails.application.routes.draw do
     resources :sweets, only:[:index, :show]
 end
   #管理者側
-   namespace :admin do
+namespace :admin do
      root to:  "posts#index"
      delete '/posts/:id' => 'posts#destroy', as: 'destroy_post' #ここ消すと、エラーが出る
      resources :posts, only: [:index, :show, :destroy]
      delete '/users/:id' => 'users#destroy', as: 'destroy_user'
-     resources :users, only: [:index]
+     resources :users, only: [:index, :destroy]
      resources :sweets, only: [:show, :index, :edit, :update]
 end
 end

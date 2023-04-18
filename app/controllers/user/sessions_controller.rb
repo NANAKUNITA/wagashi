@@ -3,14 +3,7 @@
 class User::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
-  def guest_login
-    user = User.find_or_create_by(email: 'guest@example.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      # 必要に応じて、ゲストユーザーに設定したい属性を追加することができます。
-    end
-    session[:user_id] = user.id
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
-  end
+
   
   # GET /resource/sign_in
    #def new

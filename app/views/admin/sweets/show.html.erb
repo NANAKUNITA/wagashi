@@ -1,21 +1,28 @@
-<div class="col-xs-4">
+<div class="container my-5">
+  <div class="sweet-index">
+  <%= form_with model: @sweet, url: sweet_path do |f| %>
+    <h2><%= @sweet.name %></h2>
+    <br>
   <div class="sweet-item">
-    <%= form_with model: @sweet, url: admin_sweet_path do |f| %>
       <div>
         <dl>
           <dt>
-            <%= link_to admin_sweet_path(@sweet) do %>
-              <%= image_tag @sweet.get_image, class: "sweet-img" %>
-            <% end %>
+            <%= image_tag @sweet.get_image, class: "sweet-img" %>
           </dt>
           <br>
           <dd>
-            <%= link_to @sweet.name, admin_sweet_path(@sweet) %>
-            <%= link_to "編集する", admin_edit_sweet_path(@sweet), class: "btn btn-outline-danger mx-auto my-1" %>
+            <%= @sweet.name %>
+          </dd>
+          <dd>
+            <%= @sweet.description %>
+          </dd>
+          <dd>
+            <%= link_to "編集する", edit_admin_sweet_path(@sweet), class: "btn btn-outline-danger mx-auto my-1" %>
           </dd>
         </dl>
       </div>
-    <% end %>
+  </div>
+  <% end %>
   </div>
 </div>
 

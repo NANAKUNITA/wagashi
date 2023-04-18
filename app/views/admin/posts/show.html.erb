@@ -17,9 +17,9 @@
                       <%= @post.content %>
                     </dd>
                     <dd>
-                        <% if admin_signed_in? %>
-                          <%= link_to "削除", admin_post_path(@post), method: :delete, "data-confirm" => "削除しますか？" %>
-                        <% end %>
+                      <% if admin_signed_in? %>
+                        <%= button_to "削除", admin_post_path(@post), method: :delete, "data-confirm" => "削除しますか？" %>
+                      <% end %>
                     </dd>
                     <dt>
                       コメント投稿者

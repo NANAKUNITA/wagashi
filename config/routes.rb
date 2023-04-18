@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
- post 'login/guest', to: 'sessions#new_guest'
- 
+
  devise_for :users, skip:[:passwords], controllers:{
     registrations: "user/registrations",
     sessions: "user/sessions"
@@ -11,16 +10,16 @@ Rails.application.routes.draw do
   }
 #会員用
     scope module: :user do
-    root "homes#top"
-    # 以下を追加
+    root to:  "posts#index"
+    post '/users/guest_sign_in', to: 'sessions#new_guest'
     resources :users, only: [:show, :edit, :update] do
         get :favorites, on: :collection
     end
-    resources :tags, only: [:show] #postsにネストすると、特定の投稿に紐ずくタグを持つ投稿を一覧表示するページにアクセスすることになる。
+    #resources :tags, only: [:show] #postsにネストすると、特定の投稿に紐ずくタグを持つ投稿を一覧表示するページにアクセスすることになる。
     #単独ルーティングをすると、特定のタグを持つ投稿を一覧表示するページにアクセスすることになる。
-    resources :posts, only: [:show, :index, :create, :new, :update, :edit, :destroy] do #indexは、 root "homes#top"のため、ここでは指定しない
-    post 'favorites', to: 'favorites#create'
-    delete 'favorites', to: 'favorites#destroy'
+    resources :posts, only: [:index, :show, :create, :new, :update, :edit, :destroy] do #indexは、 root "homes#top"のため、ここでは指定しない
+    post :favorites, on: :member
+    delete :unfavorites, on: :member
       #resource :favorites, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy] 
       collection do
@@ -32,11 +31,12 @@ Rails.application.routes.draw do
     resources :sweets, only:[:index, :show]
 end
   #管理者側
-  namespace :admin do
-     root "homes#top"
-     #delete "/posts/:id" => "posts#destroy_post"
-     resources :posts, only: [:index, :show, :destroy]  #indexは、 root "homes#top"のため、ここでは指定しない
-     resources :users, only: [:index, :show, :destroy]
-     resources :sweets, only: [:show, :index, :new, :create, :edit, :update]
+   namespace :admin do
+     root to:  "posts#index"
+     delete '/posts/:id' => 'posts#destroy', as: 'destroy_post' #ここ消すと、エラーが出る
+     resources :posts, only: [:index, :show, :destroy]
+     delete '/users/:id' => 'users#destroy', as: 'destroy_user'
+     resources :users, only: [:index]
+     resources :sweets, only: [:show, :index, :edit, :update]
 end
 end

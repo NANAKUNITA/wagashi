@@ -1,4 +1,6 @@
 class User::UsersController < ApplicationController
+  before_action :authenticate_user!
+  
   def show
     @user=User.find(params[:id])
     @posts=@user.posts
@@ -13,5 +15,10 @@ class User::UsersController < ApplicationController
   def favorites
     @favorites = current_user.favorites
   end
+  
+   private
+     def user_params
+         params.require(:user).permit(:is_deleted, :name, :email, :password)
+     end
 
 end

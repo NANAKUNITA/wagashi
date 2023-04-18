@@ -1,5 +1,5 @@
 class User::SweetsController < ApplicationController
-     #before_action :authenticate_user!
+     before_action :authenticate_user!
      
      def index
           @sweets = Sweet.all.order(created_at: :desc)
@@ -14,6 +14,6 @@ class User::SweetsController < ApplicationController
        private
      
      def sweet_params
-         params.require(:sweet).permit(:genre_id, :name, :description, :image)
+         params.require(:sweet).permit(:month, :name, :description, :image)
      end
 end

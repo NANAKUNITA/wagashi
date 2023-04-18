@@ -1,28 +1,24 @@
 <div class="container my-5">
-        <div class="sweet-title">
-            <div class="sweet-item">
-          <% @sweet.each do |sweet| %>
-            <div>
-              <dl>
+  <% @sweets.group_by(&:month).each do |month, sweets| %>
+    <div class="row">
+      <h2><%= month %>月</h2>
+      <% sweets.each do |sweet| %>
+      <div lass="col-md-6">
+        <div class="sweet-item">
+          <div>
+            <dl>
                 <dt>
-                     <h2><%= sweet.genre.month %></h2>
-                   <%= link_to admin_sweet_path(sweet) do %>
-                     <%= image_tag sweet.get_image, class: "sweet-img" %>
-                   <% end %>
+                  <%= link_to admin_sweet_path(sweet) do %>
+                  <%= image_tag sweet.get_image, class: "sweet-img" %>
+                  <% end %>
                 </dt>
-                <br>
-                <dd>
-                   <%= link_to sweet.name, admin_sweet_path(sweet) %>
-                </dd>
-                 <dd>
-            <%= sweet.description %>
-          </dd>
-        </dl>
-      </div>
-    <% end %>
-  </div>
-
-<!-- monthをmigrateに追加して、同じ内容を繰り返さないように、seeds.rbを編集する。-->
-            </div>
-       </div>
+              <dd><%= sweet.name %></dd>
+              <dd><%= sweet.description %></dd>
+            </dl>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

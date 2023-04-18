@@ -1,11 +1,11 @@
 <div class="container my-5">
-    <div class="sweet-title">
+    <div class="sweet-index">
         <h2>和菓子編集</h2>
         <br><br>
         <div class="sweet-item">
             <div>
                 <dl>
-                    <%= form_with model: @sweet do |f|%>
+                    <%= form_with model: @sweet, url: admin_sweet_path do |f|%> <!-- ここのURLを指定していないと、no routes matches [PATCH]が出る-->
                     <dt>
                       <div class="item-new-form">
                          <%= f.file_field :image, accept: "image/*" %> <!-- file_fieldとは、ファイルの投稿をするためのフィールドであり、画像ファイル以外に音声ファイルや動画ファイルも投稿できてしまうので、'accept: "image/*"を使い、画像ファイルしか投稿できなくする。-->

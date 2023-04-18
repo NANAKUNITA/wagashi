@@ -172,3 +172,17 @@ div.pagination {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.favorite-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  .bi-heart {
+    color: gray;
+  }
+
+  &.favorited .bi-heart-fill {
+    color: red;
+  }
+}

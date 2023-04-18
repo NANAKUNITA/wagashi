@@ -59,3 +59,4 @@ gem 'kaminari','~> 1.2.1'
 gem "net-smtp"
 gem "faker"
 gem 'ransack'
+gem 'jquery-rails'

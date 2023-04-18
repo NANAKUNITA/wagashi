@@ -1,21 +1,23 @@
 class User::FavoritesController < ApplicationController
-   #before_action :set_post
+   before_action :set_post
+   before_action :authenticate_user!
 
   def create
-    @favorite = Favorite.new(user_id: current_user.id, post_id: @post.id)
-    @favorite.save
-    redirect_to post_path(@post)
+    current_user.favorite(@post)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
-    @favorite = Favorite.find_by(user_id: current_user.id, post_id: @post.id)
-    @favorite.destroy
-    redirect_to post_path(@post)
+    current_user.unfavorite(@post)
+    respond_to do |format|
+      format.js
+    end
   end
-
   private
 
   def set_post
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
   end
 end

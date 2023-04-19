@@ -27,7 +27,7 @@
                   <li class="nav-list-item"><%= link_to "季節の和菓子を見てみる", sweets_path %></li>
                   <li class="nav-list-item"><%= link_to "投稿一覧", root_path %></li>
                   <li class="nav-list-item"><%= link_to "マイページ", user_path(current_user) %></li>
-                  <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :delete %></li>
+                  <li class="nav-list-item"><%= link_to "ログアウト",  destroy_user_session_path, method: :get %></li>
                    <span class="u h7 text-white strong">
                     ようこそ、<%= current_user.name %>さん！
                    </span>
@@ -36,7 +36,7 @@
                   <li class="nav-list-item"><%= link_to "投稿一覧", admin_root_path %></li>
                   <li class="nav-list-item"><%= link_to "ユーザー一覧", admin_users_path %></li>
                   <li class="nav-list-item"><%= link_to "季節ごとの和菓子一覧", admin_sweets_path %></li>
-                  <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+                  <li class="nav-list-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :get %></li>
                 <!-- ログインしていない時 -->
                 <% else %>
                   <li class="nav-list-item"><%= link_to "管理者ログイン", admin_session_path, method: :get %></li>

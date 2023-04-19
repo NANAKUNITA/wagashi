@@ -14,11 +14,19 @@
                 <!-- def get_profile_imageの部分がArgumentError（引数のエラー）wrong number of arguments(given 2, expected 0)（与えられた引数は2つだけど予測は0だから、引数の数が間違っている）のエラーが出た。
                  「get_profile_image」に渡す引数でエラーが起こっている。＝＞サイズ指定が間違っており、（100, 100)になっていたため、変更。-->
               <strong><i class=" fa fa-regular fa-user"></i><span><%= @post.user.name %></strong></span>
-              <% if current_user %>
-  <%= link_to favorite_post_path(@post), method: :post, remote: true, class: "favorite-button #{'favorited' if current_user.favorite?(@post)}" do %>
-    <i class="bi <%= current_user.favorite?(@post) ? 'bi-heart-fill' : 'bi-heart' %>"></i>
-  <% end %>
-<% end %>
+            <% if @post.favorited_by?(current_user) %>
+              <p>
+                 <%= link_to post_favorites_path(@post), method: :delete do %>
+                   ♥<%= @post.favorites.count %> いいね
+                 <% end %>
+              </p>
+            <% else %>
+              <p>
+                  <%= link_to post_favorites_path(@post), method: :post do %>
+                   ♡<%= @post.favorites.count %> いいね
+                  <% end %>
+              </p>
+            <% end %>
               <%= @post.content %>
               <% if @post.user == current_user %>
                 <%= link_to "編集する", edit_post_path(@post), class: "btn btn-outline-danger mx-auto my-1" %>
@@ -31,10 +39,9 @@
   </div>
 </div>
 
-<div class="col-md-6">
-    <div class="col-md-6">
+<div class="col-md-12">
     <div class="post-title">
-      <h2></h2>
+      <h2>コメント投稿</h2>
       <br><br>
         <div class="post-item">
           <div>
@@ -65,5 +72,4 @@
           </div>
         </div>
     </div>
-  </div>
 </div>

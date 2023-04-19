@@ -29,7 +29,7 @@ Post.create!(
    title: "🌸本日の和菓子🌸",
    content: "今日は、３色団子を今年初めて食べました！
    やはり、毎年どうしても食べたくなる一品です…。
-   また、4月中に春の和菓子を共有しますね！ではまた！",
+   また、4月中に春の和菓子を共有しますね！ではまた！"
 )
 Post.create!(
    user_id: 2,
@@ -37,8 +37,44 @@ Post.create!(
    content: "来月、5月22日に国丸屋本店にて、和菓子イベントを開催いたします！
    5月の和菓子だけではなく、1月から12月までの季節の和菓子をそれぞれ数量限定でご用意いたします。
    ぜひ、この機会にお試しくださいませ！
-   場所日時などの詳しい情報は、国丸屋のホームページにてご確認ください。",
+   場所日時などの詳しい情報は、国丸屋のホームページにてご確認ください。"
 )
+Post.create!(
+    user_id: 3,
+    title: "",
+    content: ""
+    )
+Post.create!(
+    user_id: 4,
+    title: "",
+    content: ""
+    )
+Post.create!(
+    user_id: 5,
+    title: "",
+    content: ""
+    )
+Post.create!(
+    user_id: 6,
+    title: "",
+    content: ""
+    )
+Post.create!(
+    user_id: 7,
+    title: "",
+    content: ""
+    )
+Post.create!(
+    user_id: 8,
+    title: "",
+    content: ""
+    )
+Post.create!(
+    user_id: 9,
+    title: "",
+    content: ""
+    )
+
 
 #sweet
 Sweet.create!(:month => 12, :name => "", :description => "")
@@ -65,3 +101,36 @@ Sweet.create!(:month => 2, :name => "", :description => "")
 Sweet.create!(:month => 2, :name => "", :description => "")
 Sweet.create!(:month => 1, :name => "花びら餅", :description => %{平安時代、朝廷では元日から３日間、長寿を願って歯固めの儀式から由来している和菓子。})
 Sweet.create!(:month => 1, :name => "", :description => "")
+
+Comment.create!(
+   post_id: 1,
+   comment: ""
+)
+Comment.create!(
+   post_id: 2,
+   comment: ""
+)
+Comment.create!(
+   post_id: 3,
+   comment: ""
+)
+Comment.create!(
+   post_id: 4,
+   comment: ""
+)
+Comment.create!(
+   post_id: 5,
+   comment: ""
+)
+Comment.create!(
+   post_id: 6,
+   comment: ""
+)
+Comment.create!(
+   post_id: 7,
+   comment: ""
+)
+Comment.create!(
+   post_id: 8,
+   comment: ""
+)

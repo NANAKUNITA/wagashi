@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 scope module: :user do
     root to:  "posts#index"
     post '/users/guest_sign_in', to: 'users#new_guest'
+    patch "/users/withdraw" => "users#withdraw"
+    get "/users/confirm_withdraw" => "users#confirm"
     resources :users, only: [:show, :edit, :update] do
         get :favorites, on: :collection
     end
@@ -26,8 +28,6 @@ scope module: :user do
           get "search"
       end
     end
-    patch "/users/withdraw" => "users#withdraw"
-    get "/users/confirm_withdraw" => "users#confirm"
     resources :sweets, only:[:index, :show]
 end
   #管理者側

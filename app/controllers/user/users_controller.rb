@@ -25,6 +25,18 @@ class User::UsersController < ApplicationController
     @favorites = current_user.favorites
   end
   
+  def confirm
+         @user=current_user
+  end
+     
+  def withdraw
+   @user=current_user
+    if @user.update(is_deleted: true)
+      sign_out current_user
+    end
+   redirect_to root_path
+  end
+  
    private
      def user_params
          params.require(:user).permit(:is_deleted, :name, :email, :password)

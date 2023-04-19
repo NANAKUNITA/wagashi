@@ -9,7 +9,7 @@ class User::PostsController < ApplicationController
     @post=Post.new(post_params)
     @post.user_id=current_user.id
     @post.save
-    redirect_to post_path
+    redirect_to posts_path
   end
 
   def index
@@ -36,20 +36,6 @@ class User::PostsController < ApplicationController
   #@posts = @tag.posts
   #end
   
-def new_guest
-  # emailでユーザーが見つからなければ作ってくれるという便利なメソッド
-  user = User.find_or_create_by(email: 'guest@example.com') do |user|
-  # 自分はユーザー登録時にニックネームを必須にしているのでこの記述が必要
-  user.name = "ゲスト"
-  # 英数字混合を必須にしているので、ランダムパスワードに、英字と数字を追加してバリデーションに引っかからないようにしています。
-  user.password = SecureRandom.alphanumeric(10) + [*'a'..'z'].sample(1).join + [*'0'..'9'].sample(1).join
-  end
-  user.confirmed_at = Time.now
-  # sign_inはログイン状態にするデバイスのメソッド、userは3行目の変数userです。
-  sign_in user
-  # ログイン後root_pathに飛ぶようにしました。
-  redirect_to root_path
-end
 
   def favorites
     @post = current_user.favorite_posts.includes(:user).order(created_at: :desc)

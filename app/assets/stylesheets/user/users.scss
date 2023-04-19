@@ -7,15 +7,13 @@
   overflow: scroll;
 }
 
-img{
-  width: 100px;
-  height: 100px;
+div{
+  text-align: center;
 }
 
+
 .user-title{
-  background-color: #f8f8f8;
-  padding-top: 30px;
-  padding-bottom: 10px;
+  padding-top: auto;
 }
 
 .user-title h2{
@@ -23,6 +21,7 @@ img{
   font-weight: bold;
   text-align: center;
   color: #0054a7;
+  overflow: scroll;
 }
 
 .user-title h2::after{
@@ -36,7 +35,10 @@ img{
   margin-right: auto;
 }
 
-.user-item{
+.user-item dt{
+  font-weight: bold;
+}
+/*.user-item{
   display: flex;
   padding-bottom: 20px;
   padding-left: 60px;
@@ -59,9 +61,7 @@ img{
   margin-top: 20px;
 }
 
-.user-item dt{
-  font-weight: bold;
-}
+
 
 .user-item dd{
   font-size: 13px;
@@ -69,3 +69,45 @@ img{
   margin-top: 10px;
 }
 
+*/
+
+textarea{
+  border:1px solid #0054a7;
+  background-color: #ffffff;
+  width:150%;
+  height:130px;
+}
+ input#inputName{
+  border:1px solid #0054a7;
+  width: 200px;
+  height: 30px;
+}
+
+ input#user_email{
+  border:1px solid #0054a7;
+  width: 200px;
+  height: 30px;
+}
+
+input#file-upload-button{
+  border:3px solid #0054a7;
+  width: 300px;
+  height: 50px;
+}
+
+input.btn.btn-primary{
+  border:2px solid #0054a7;
+  width: 100px;
+  height: 40px;
+  padding-right: 15px;
+  padding-left: 10px;
+  background-color: #f7bba2;
+}
+
+.user-profile{
+  width: 260px;
+  height: 260px;
+  border-radius:40%;
+  margin: 0 auto;
+  border:1px solid #0054a7;
+}

@@ -19,7 +19,7 @@ img{
   height: 100px;
   justify-content: center;
   margin: 20px 0 20px 20px;
-  padding-left: 700px;
+  padding-left: 610px;
 }
 .search-box input{
   border:2px solid #0054a7;
@@ -126,25 +126,9 @@ input.btn.btn-primary{
 }
 
 /*　index.html.erbの新規登録ボタンのアイコン */ 
-.new-icon{
-  display:inline-block;
-  background-color:#f7bba2;
-  padding:30px 75px;
-  color:#f7bba2;
-  border-radius:8px;
-  border-bottom:7px solid #f7bba2;
-  transition:.1s;
-  cursor:pointer;
-  text-align: center;
-}
-.new-icon:hover{
-  border-bottom-width:0;
-  margin-top:3px;
-}
 div.new-icon{
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
+  padding-left: 780px;
+  padding-top: 50px;
   padding-bottom: 10px;
   margin-right: 90px;
 }

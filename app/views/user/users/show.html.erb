@@ -3,28 +3,34 @@
         <div class="col-md-6">
             <div class="user-title">
                 <h2>マイページ</h2>
+                <br>
                 <div class="user-item">
                     <div>
                         <dl>
                             <dt>
                               <%= image_tag @user.get_profile_image, class: "user-profile" %>
                             </dt>
+                            <br>
                             <dd>
-                              <%= @user.name %>
+                              ユーザーネーム：<%= @user.name %>
                             </dd>
                             <dd>
-                              <%= link_to "編集する", edit_user_path(@user), class: "btn btn-outline-danger mx-auto my-1" %>
+                                <p>メールアドレス：</p><%= @user.email %>
+                            </dd>
+                            <dd>
+                              <%= link_to edit_user_path(@user) do %>
+                              <p>編集する</p>
+                              <% end %>
                             </dd>
                         </dl>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col-md-6">
             <div class="user-title">
                 <h2>ブックマーク一覧</h2>
+                <br>
                 <div class="user-item">
                     <div>
                       <% if @favorite_list.present? %>

@@ -17,13 +17,6 @@ img{
   height: 100px;
 }
 
-.search{
-  display: flex;
-  width: 200px;
-  height: 100px;
-  justify-content: center;
-}
-
 .post-title{
   background-color: #ffffff;
   padding-top: 30px;
@@ -48,7 +41,7 @@ img{
   margin-right: auto;
 }
 
-.post-item{
+.post-item{/**/
   display: flex;
   padding-bottom: 20px;
   padding-left: 60px;
@@ -79,15 +72,6 @@ img{
   font-size: 13px;
   line-height: 20px;
   margin-top: 10px;
-}
-
-/*　index.html.erbの新規登録ボタンのアイコン */ 
-.new-icon{
-  display: flex;
-  width: 180px;
-  height: 40px;
-  background-color: #ffffff;
-  justify-content: center;
 }
 
 /*　投稿画像　*/

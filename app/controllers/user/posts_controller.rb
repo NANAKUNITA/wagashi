@@ -6,6 +6,7 @@ class User::PostsController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])#あとで追加した
     @post=Post.new(post_params)
     @post.user_id=current_user.id
     @post.save

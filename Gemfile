@@ -66,4 +66,3 @@ end
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'

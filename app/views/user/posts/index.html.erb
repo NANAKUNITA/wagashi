@@ -1,13 +1,11 @@
 <div class="container my-5">
     <div class="post-title">
         <h2>投稿一覧</h2>
-    <div class="row">
-      <div class="new-icon">
-        <strong><%= link_to "+ 投稿する", new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" %></strong>
-      </div>
+        <br><br>
+    <div class="float-right">
+        <strong><%= link_to "+", new_post_path, class: "btn btn-lg rounded-circle text-right ml-auto shadow-sm" %></strong>
     </div>
-    <div class="row">
-      <div class="search">
+    <div class="mx-auto" style="width: 285px;">
         <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
           <%= form.text_field :keyword %>
           <br><br>
@@ -15,7 +13,6 @@
           <%= form.submit "検索", class: "btn btn-primary" %>
         <% end %>
       </div>
-    </div>
     </div>
     <div class="post-item">
       <% @posts.each do |post| %>
@@ -37,13 +34,16 @@
                     <% end %>
                       <br>
                     <%= post.content %>
-              </dd>
               </dl>
           </div>
       <% end %>
       </div>
      <div class="pagination">
         <%= paginate @posts %>
+      </div>
+    </div>
+</div>
+@posts %>
       </div>
     </div>
 </div>

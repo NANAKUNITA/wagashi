@@ -58,6 +58,7 @@ gem 'devise'
 gem 'kaminari','~> 1.2.1'
 gem "faker"
 gem 'ransack'
+gem 'jquery-rails'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
@@ -65,4 +66,4 @@ end
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
-gem 'jquery-rails', '4.5.1'
+gem 'bootstrap', '~> 5.0.2'

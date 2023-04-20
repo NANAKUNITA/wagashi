@@ -20,6 +20,12 @@ class User::UsersController < ApplicationController
   def edit
     @user=User.find(params[:id])
   end
+  
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path #useres/showへ
+  end
 
   def favorites
     @favorites = current_user.favorites

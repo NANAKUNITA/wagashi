@@ -23,6 +23,14 @@ User.create!(
     #image: File.open("./app/assets/images/profile2.jpg")
 )
 
+User.create!(
+    email: "text@mail",
+    name: "yeswoman",
+    password: "abc1234",
+    #image: File.open("./app/assets/images/profile2.jpg")
+)
+
+
 #post
 Post.create!(
    user_id: 1,
@@ -40,39 +48,9 @@ Post.create!(
    場所日時などの詳しい情報は、国丸屋のホームページにてご確認ください。"
 )
 Post.create!(
-    #user_id: 3,
-    title: "",
-    content: ""
-    )
-Post.create!(
-    #user_id: 4,
-    title: "",
-    content: ""
-    )
-Post.create!(
-    #user_id: 5,
-    title: "",
-    content: ""
-    )
-Post.create!(
-    #user_id: 6,
-    title: "",
-    content: ""
-    )
-Post.create!(
-    #user_id: 7,
-    title: "",
-    content: ""
-    )
-Post.create!(
-    #user_id: 8,
-    title: "",
-    content: ""
-    )
-Post.create!(
-    #user_id: 9,
-    title: "",
-    content: ""
+    user_id: 3,
+    title: "美味しいお菓子",
+    content: "久しぶりに和菓子を食べてみました。\nこんなゆったりとした時間を過ごすのはいつぶりでしょうか。桜餅、また食べたいです。"
     )
 
 
@@ -102,35 +80,16 @@ Sweet.create!(:month => 2, :name => "", :description => "")
 Sweet.create!(:month => 1, :name => "花びら餅", :description => %{平安時代、朝廷では元日から３日間、長寿を願って歯固めの儀式から由来している和菓子。})
 Sweet.create!(:month => 1, :name => "", :description => "")
 
-Comment.create!(
+#これを入れると、error
+#Comment.create!(
    #post_id: 1,
-   comment: ""
-)
-Comment.create!(
+   #comment: "私もわかります！いつも３本は買って食べてしまいます（笑）"
+#)
+#Comment.create!(
    #post_id: 2,
-   comment: ""
-)
-Comment.create!(
+   #comment: "行きたいです！楽しみにしています✨"
+#)
+#Comment.create!(
    #post_id: 3,
-   comment: ""
-)
-Comment.create!(
-   #post_id: 4,
-   comment: ""
-)
-Comment.create!(
-   #post_id: 5,
-   comment: ""
-)
-Comment.create!(
-   #post_id: 6,
-   comment: ""
-)
-Comment.create!(
-   #post_id: 7,
-   comment: ""
-)
-Comment.create!(
-   #spost_id: 8,
-   comment: ""
-)
+   #comment: "桜餅、すでに私は今年６個食べました！いろんなお店のを食べてみると面白いですよ！"
+#)

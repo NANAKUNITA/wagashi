@@ -72,7 +72,7 @@ Sweet.create!(:month => 6, :name => "氷室饅頭", :description => %{6月1日�
 Sweet.create!(:month => 5, :name => "柏餅", :description => %{5月5日端午の節句の日、主に関東で食べられる。\n柏の葉は昔、神への供物の食器として使われた。})
 Sweet.create!(:month => 5, :name => "ちまき", :description => %{5月5日端午の節句の日、主に関西で食べられる。\nちまきを菓子として作るようになったのは、江戸時代から。})
 Sweet.create!(:month => 4, :name => "", :description => "")
-Sweet.create!(:month => 4, :name => "", :description => "")
+Sweet.create!(:month => 4, :name => "三色団子", :description => "「花見には月見を串に差して売り」という江戸期の川柳もあることから、当時から花見には団子がつきものだったのだろう。")
 Sweet.create!(:month => 3, :name => "いがまんじゅう", :description => "三河地域で雛祭りの日に供えて食べる。赤は桃の花、緑は新緑、黄は菜の花を表している。")
 Sweet.create!(:month => 3, :name => "ぼた餅", :description => "彼岸にぼた餅を食べるという風習が定着したのは江戸時代といわれる。季節ごとに名前が変わり、春はぼた餅、夏は夜船、秋はおはぎ、冬は北窓という。")
 Sweet.create!(:month => 2, :name => "玉椿", :description => "大名家の婚礼にために作られた。薄桃色の求肥が椿の花、中の黄身餡が花芯を表す。")

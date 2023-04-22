@@ -8,10 +8,10 @@
                    <%= form_with model: @post do |f| %>
                    <%= f.file_field :image, accept: "image/*" %>
                    <br><br>
-                    <dt>
+                    <dd>
                         <%= f.text_field :title, class:"form-control", placeholder: "タイトル" %>
-                    </dt>
-                    <br>
+                    </dd>
+                   
                     <dd>
                         <%= f.text_area :content, class:"form-control", placeholder: "本文" %>
                     </dd>

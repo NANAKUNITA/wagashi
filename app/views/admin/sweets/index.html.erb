@@ -1,10 +1,14 @@
 <div class="container my-5">
   <% @sweets.group_by(&:month).each do |month, sweets| %>
-    <div class="row">
-      <h2><%= month %>月</h2>
+      <div class="row justify-content-center">
+        <div class="sweet-index">
+          <h2><%= month %>月</h2>
+        </div>
+      </div>
+        <br><br>
+    <div class="row justify-content-center">
       <% sweets.each do |sweet| %>
-      <div lass="col-md-6">
-        <div class="sweet-item">
+      <div class="col-md-4">
           <div>
             <dl>
                 <dt>
@@ -12,11 +16,10 @@
                   <%= image_tag sweet.get_image, class: "sweet-img" %>
                   <% end %>
                 </dt>
+                <br><br>
               <dd><%= sweet.name %></dd>
-              <dd><%= sweet.description %></dd>
             </dl>
           </div>
-        </div>
         </div>
       <% end %>
     </div>

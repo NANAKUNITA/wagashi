@@ -1,6 +1,7 @@
 <div class="container my-5">
-  <div class="sweet-index">
-  <%= form_with model: @sweet, url: sweet_path do |f| %>
+  <div class="row justify-content-center">
+   <div class="sweet-index">
+  <%= form_with model: @sweet, url: admin_sweet_path do |f| %>
     <h2><%= @sweet.name %></h2>
     <br>
   <div class="sweet-item">
@@ -16,6 +17,7 @@
           <dd>
             <%= @sweet.description %>
           </dd>
+          <br><br>
           <dd>
             <%= link_to "編集する", edit_admin_sweet_path(@sweet), class: "btn btn-outline-danger mx-auto my-1" %>
           </dd>
@@ -23,6 +25,7 @@
       </div>
   </div>
   <% end %>
+   </div>
   </div>
 </div>
 

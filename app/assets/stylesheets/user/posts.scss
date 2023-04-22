@@ -37,7 +37,7 @@ input#keyword{
 /**/
 
 /* 新規投稿 */
-textarea{
+textarea#post_content.form-control{
   border:1px solid #0054a7;
   background-color: #ffffff;
   width:150%;
@@ -46,14 +46,15 @@ textarea{
  input#post_title.form-control{
   border:1px solid #0054a7;
   width: 200px;
-  height: 30px;
+  height: 80px;
 }
 
-input#file-upload-button{
+/*input#file-upload-button{
   border:3px solid #0054a7;
   width: 300px;
   height: 50px;
-}
+  background-color: #f7bba2;
+}*/
 
 input.btn.btn-primary{
   border:2px solid #0054a7;

@@ -24,6 +24,7 @@ scope module: :user do
       resources :comments, only: [:create, :destroy] 
       collection do
           get "search"
+          get "search_tag"=>"posts#search_tag"
       end
     end
     resources :sweets, only:[:index, :show]

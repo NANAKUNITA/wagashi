@@ -3,3 +3,521 @@
 
 
 /* @useは、カリキュラム内容変更のため */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 120px;
+  padding: 15px 0;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+}
+
+body{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  overflow: scroll;
+}
+
+div{
+  text-align: center;
+}
+
+img{
+  max-width: 100%;
+}
+
+a{
+  color: #0054a7;
+  text-decoration: none;
+}
+
+.header_logo{
+  width: 170px;
+  display: block;
+}
+
+div.icon{
+    float:right;
+    padding:10px;  
+    display: block;
+}
+div.icon ul{
+    margin:0;
+    padding:0;
+    font-size:14px;
+    line-height:1.4;
+    list-style:none;
+    *zoom:1;
+}
+div.icon ul:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+div.icon li{
+    float:left;
+}
+div.icon li a{
+    display:block;
+    padding:10px;
+    color: #f7bba2;
+    text-decoration:none;
+}
+div.icon li a span{
+    /*display:inline-block; ここを入れると、Instagramなどの表記がなくなる*/
+    text-indent:-9999px;
+    text-decoration:none;
+}
+
+div.icon li a i{
+    font-size:40px;
+}
+.navbar ul{
+  display: flex;
+}
+
+.navbar ul li{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.navbar ul li a{
+  font-family: 'Noto Serif JP', serif;
+  /*font-weight: bold;*/
+}
+.main {
+  flex: 1;
+  width: 840px; /* 横幅840px */
+  display: flex; /* Flexboxの利用 */
+  justify-content: center; /* 要素の横並び・中央寄せ */
+  margin: 0 auto; /* 中央寄せ（左右に余白がないとできない） */
+}
+
+.nav-list {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 auto;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+ .navbar-nav li {
+ font-size: 15px;
+ padding-top: 15px;
+}
+
+.collapse navbar-collapse ul{
+  display: flex;
+}
+
+/* ここをcontainerだけにしてしまうと、全てに適用されてしまうため、
+ container-menuにした。*/
+.container-menu {
+  max-width: 1200px;
+  height: 110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.recommendation-items {
+  float: left;
+  margin-right: 50px;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 140px; /* フッターの高さを指定 */
+  background-color: #0054a7;
+  color: #fff;
+  border-top: 2px solid #f7bba2;
+  line-height: 14px;
+  text-align: center;
+}
+
+.footer-text{
+  display: flex;
+  color: #f7bba2;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0 10px 0;
+}
+
+.container{
+  overflow: scroll;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+}
+
+/* 検索ボックス */
+.search{
+  width: 200px;
+  height: 100px;
+  justify-content: center;
+  margin: 20px 0 20px 20px;
+}
+.search-box input{
+  border:2px solid #0054a7;
+  background-color: #f7bba2;
+  width: 100px;
+  height: 30px;
+}
+.search-box{
+  text-align: center;
+}
+input#keyword{
+  border:3px solid #0054a7;
+  width: 300px;
+  height: 50px;
+}
+/**/
+
+ input#post_title.form-control{
+  border:1px solid #0054a7;
+  width: 200px;
+  height: 80px;
+}
+
+/*input#file-upload-button{
+  border:3px solid #0054a7;
+  width: 300px;
+  height: 50px;
+  background-color: #f7bba2;
+}*/
+
+input.btn.btn-primary{
+  border:2px solid #0054a7;
+  width: 100px;
+  height: 30px;
+  background-color: #f7bba2;
+}
+
+/*　index.html.erbの新規登録ボタンのアイコン */ 
+div.new-icon{
+  padding-left: 780px;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  margin-right: 90px;
+}
+
+/*　投稿画像　*/
+img.post-img{
+  width: 260px;
+  height: 225px;
+  /*margin: auto;*/
+  border:1px solid #0054a7;
+}
+
+/*　プロフィール画像　*/
+img.post-profile-img{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius:40%;
+  margin: 0 50px 0 0;
+  border:1px solid #f7bba2;
+}
+
+.favorite-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  .bi-heart {
+    color: gray;
+  }
+
+  &.favorited .bi-heart-fill {
+    color: red;
+  }
+}
+
+.row{
+    text-align: center;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+}
+
+.post-title{
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.post-title h2{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #0054a7;
+}
+
+.post-title h2::after{
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #f7bba2;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-item{/**/
+  display: flex;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+  overflow: scroll;
+  justify-content: center;
+}
+
+.post-item div{
+  flex-shrink: 0;
+  width: 260px;
+  margin-left: 75px;
+}
+
+.post-item div:first-child{
+  margin-left: 0;
+}
+
+.post-item dl{
+  margin-top: 20px;
+}
+
+.post-item dt{
+  font-weight: bold;
+}
+
+.post-item dd{
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+/*　プロフィール画像　*/
+img.post-profile-img{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius:40%;
+  margin: 0 50px 0 0;
+  border:1px solid #f7bba2;
+}
+
+/*　ページネーション　*/
+.pagination {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+// postここまで
+
+.user-title{
+  text-align: right;
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+.user-title h2{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #0054a7;
+  overflow: scroll;
+}
+
+.user-title h2::after{
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #f7bba2;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-item dt{
+  font-weight: bold;
+}
+/*.user-item{
+  display: flex;
+  padding-bottom: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+  overflow: scroll;
+  justify-content: center;
+}
+
+.user-item div{
+  flex-shrink: 0;
+  width: 260px;
+  margin-left: 75px;
+}
+
+.user-item div:first-child{
+  margin-left: 0;
+}
+
+.user-item dl{
+  margin-top: 20px;
+}
+
+
+
+.user-item dd{
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+
+*/
+
+textarea{
+  border:1px solid #0054a7;
+  background-color: #ffffff;
+  width:150%;
+  height:130px;
+}
+ input#inputName{
+  border:1px solid #0054a7;
+  width: 200px;
+  height: 30px;
+}
+
+ input#user_email{
+  border:1px solid #0054a7;
+  width: 200px;
+  height: 30px;
+}
+
+input#file-upload-button{
+  border:3px solid #0054a7;
+  width: 300px;
+  height: 50px;
+}
+
+input.btn.btn-primary{
+  border:2px solid #0054a7;
+  width: 100px;
+  height: 40px;
+  padding-right: 15px;
+  padding-left: 10px;
+  background-color: #f7bba2;
+}
+
+.user-profile{
+  width: 260px;
+  height: 260px;
+  border-radius:40%;
+  margin: 0 auto;
+  border:1px solid #0054a7;
+}
+
+// userここまで
+
+.sweet-index{
+  background-color: #ffffff;
+  padding-top: 45px;
+  padding-bottom: 80px;
+}
+
+.sweet-index h2{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #0054a7;
+  overflow: scroll;
+}
+
+.sweet-index h2::after{
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background-color: #f7bba2;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sweet-item{
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-right: 80px;
+  text-align: center;
+}
+
+.sweet-item div{
+  width: 260px;
+  margin-left: 75px;
+  padding-bottom: 80px;
+}
+/*
+.sweet-item div:first-child{
+  margin-left: 0;
+}
+
+.sweet-item dl{
+  margin-top: 20px;
+}
+
+.sweet-item dt{
+  font-weight: bold;
+}
+
+.sweet-item dd{
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+*/
+
+/*　和菓子画像　*/
+.sweet-img{
+  width: 260px;
+  height: 260px;
+  border-radius:40%;
+  margin: 0 auto;
+  border:1px solid #0054a7;
+}
+
+// sweetsここまで
+
+input#post-image{
+  border:3px solid #0054a7;
+  width: 300px;
+  height: 50px;
+}
+

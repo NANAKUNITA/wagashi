@@ -1,7 +1,7 @@
 <div class="container">
   <div class="post-title">
     <strong><h2>新規会員登録</h2></strong>
-    <br><br>
+    <br>
     <div class="post-item">
       <div>
         <dl>
@@ -31,16 +31,15 @@
           </dd>
           <dd>
             <h3>既に登録済みの方</h3>
-            <div class="col-lg-3">
               <%- if controller_name != 'sessions' %>
                 <%= link_to "こちら", new_user_session_path %><strong>から行なってください。</strong><!-- pathを変更するかも -->
               <% end %>
-            </div>
           <% end %>
           </dd>
+          <dd>
+            <a href="/users/sign_in"><i class="fa-solid fa-right-to-bracket"></i><span><br>ログイン</span></a>
+          </dd>
         </dl>
-          <a href="/users/sign_in"><i class="fa-solid fa-right-to-bracket"></i><span><br>ログイン</span></a>
-        <%= render "user/shared/links" %> <!-- ここは記入しておく？ -->
       </div>
     </div>
   </div>

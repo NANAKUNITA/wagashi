@@ -28,9 +28,6 @@
               </p>
             <% end %>
               <%= @post.content %>
-          <% @post_tags.each do |tag| %>
-              <%= link_to tag.name, search_tag_path(tag_id: tag.id) %><%="(#{tag.posts.count})" %>
-          <% end %>
               <% if @post.user == current_user %>
                 <%= link_to "編集する", edit_post_path(@post), class: "btn btn-outline-danger mx-auto my-1" %>
               <% end %>

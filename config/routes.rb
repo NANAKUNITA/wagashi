@@ -20,11 +20,11 @@ scope module: :user do
     #resources :tags, only: [:show] #postsにネストすると、特定の投稿に紐ずくタグを持つ投稿を一覧表示するページにアクセスすることになる。
     #単独ルーティングをすると、特定のタグを持つ投稿を一覧表示するページにアクセスすることになる。
     resources :posts, only: [:index, :show, :create, :new, :update, :edit, :destroy] do #indexは、 root "homes#top"のため、ここでは指定しない
+      #get '/post/hashtag/:name', to: "posts#hashtag"
       resource :favorites, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy] 
       collection do
           get "search"
-          get "search_tag"=>"posts#search_tag"
       end
     end
     resources :sweets, only:[:index, :show]

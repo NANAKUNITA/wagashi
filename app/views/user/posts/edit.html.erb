@@ -14,16 +14,10 @@
                     <dd>
                         <%= f.text_field :title, autofocus: true, placeholder:"タイトル", class: "form-control" %>
                     </dd>
-                    <br><br>
-                    <%= form_with model: @tag_list do |f|%>
-                    <dd>
-                        <%= f.label"タグ (,で区切ると複数タグ登録できます)" %>
-                        <%= f.text_field :name,value: @tag_list,class:"form-control"%>
-                    </dd>
-                    <% end %>
-                    <br><br>
+                    
                     <dd>
                         <%= f.text_area :content, placeholder:"本文", class: "form-control" %>
+                        <br><br>
                         <%= f.submit "変更を保存", class: "btn btn-primary text-right" %>
                     </dd>
                     <% end %>

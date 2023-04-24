@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_23_120508) do
+ActiveRecord::Schema.define(version: 2023_04_24_074000) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -71,14 +71,20 @@ ActiveRecord::Schema.define(version: 2023_04_23_120508) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "post_tags", force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.integer "tag_id", null: false
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id", "tag_id"], name: "index_post_tags_on_post_id_and_tag_id", unique: true
-    t.index ["post_id"], name: "index_post_tags_on_post_id"
-    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
+    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
+  end
+
+  create_table "post_hashtags", force: :cascade do |t|
+    t.integer "post_id_id"
+    t.integer "hashtag_id_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hashtag_id_id"], name: "index_post_hashtags_on_hashtag_id_id"
+    t.index ["post_id_id"], name: "index_post_hashtags_on_post_id_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -94,12 +100,6 @@ ActiveRecord::Schema.define(version: 2023_04_23_120508) do
     t.string "name"
     t.integer "month"
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 2023_04_23_120508) do
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
-  add_foreign_key "post_tags", "posts"
-  add_foreign_key "post_tags", "tags"
+  add_foreign_key "post_hashtags", "hashtag_ids"
+  add_foreign_key "post_hashtags", "post_ids"
   add_foreign_key "posts", "users"
 end

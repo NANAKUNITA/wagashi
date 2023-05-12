@@ -2,26 +2,28 @@
     <div class="post-title">
         <strong><h2>ユーザーログイン</h2></strong>
           <br><br>
+      <div class="post-item">
     <%= form_with model: resource, url: user_session_path do |f| %> <!-- URLの変更 -->
-        <div class="row">
-            <div class="field">
+        <div>
+          <dl>
+            <dd>
               <%= f.label :メールアドレス %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            </div>
-        </div>
-          <br><br><br>
-        <div class="row">
-            <div class="field">
+            </dd>
+          <br>
+            <dd>
               <%= f.label :パスワード %><br />
               <%= f.password_field :password, autocomplete: "current-password" %>
-            </div>
-        </div>
-           <br><br>
-        <div class="row">
+            </dd>
+           <br>
+           <dd>
             <div class="submit">
               <%= f.submit "ログイン" %>
             </div>
+            </dd>
+          </dl>
         </div>
+      </div>
     <% end %>
     </div>
 </div>
